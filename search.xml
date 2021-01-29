@@ -83,7 +83,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 中的 **类和对象**</title>
+    <title>Python 中的 类和对象</title>
     <url>/posts/bdb2/</url>
     <content><![CDATA[<p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。<br>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
 <a id="more"></a>

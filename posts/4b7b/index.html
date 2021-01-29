@@ -343,6 +343,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/4b7b/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/4b7b/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -486,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/bdb2/" rel="prev" title="Python 中的 **类和对象**">
-                Python 中的 **类和对象** <i class="fa fa-chevron-right"></i>
+              <a href="/posts/bdb2/" rel="prev" title="Python 中的 类和对象">
+                Python 中的 类和对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,6 +527,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -606,6 +619,12 @@
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="mailto:fhlielts8@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
             </div>
           
 		  
@@ -625,7 +644,7 @@
                  </li>
                 
                  <li class="recent_posts_li">
-                   <a href="/posts/bdb2/" title="Python 中的 **类和对象**" target="_blank">Python 中的 **类和对象**</a>
+                   <a href="/posts/bdb2/" title="Python 中的 类和对象" target="_blank">Python 中的 类和对象</a>
                  </li>
                 
                  <li class="recent_posts_li">
@@ -861,6 +880,36 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+		admin_email:'17222032@bjtu.edu.cn',
+        appId: 'tW0hD3F2PsjBgbgmUi3TMn3R-MdYXbMMI',
+        appKey: 'GikkEulXaz06uUUpPRK9NILa',
+        placeholder: '&#x270d;Write Comments',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+	//增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+  </script>
 
 
 

@@ -102,7 +102,7 @@
     root: '',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -294,6 +294,34 @@
 
       <h2 class="post-title">
         
+            <a class="post-title-link" href="/posts/40f8/" itemprop="url">
+              
+                <span itemprop="name">Python PDF Generator</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2021-01-29T23:43:46+08:00"
+              content="2021-01-29" >
+          01-29
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
             <a class="post-title-link" href="/posts/81b9/" itemprop="url">
               
                 <span itemprop="name">Kivy Introduction and Trial</span>
@@ -352,6 +380,7 @@
 
   
 
+  
 
           </div>
           
@@ -394,7 +423,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -416,7 +445,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -454,6 +483,10 @@
               </div>
               <ul class="links-of-blogroll-list">
                 
+                
+                 <li class="recent_posts_li">
+                   <a href="/posts/40f8/" title="Python PDF Generator" target="_blank">Python PDF Generator</a>
+                 </li>
                 
                  <li class="recent_posts_li">
                    <a href="/posts/81b9/" title="Kivy Introduction and Trial" target="_blank">Kivy Introduction and Trial</a>
@@ -511,25 +544,37 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">943</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -544,6 +589,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -578,6 +625,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -615,6 +665,16 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
@@ -682,21 +742,22 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
         el: '#comments' ,
+		lang: 'en',
         verify: false,
         notify: true,
 		admin_email:'17222032@bjtu.edu.cn',
         appId: 'tW0hD3F2PsjBgbgmUi3TMn3R-MdYXbMMI',
         appKey: 'GikkEulXaz06uUUpPRK9NILa',
-        placeholder: '&#x270d;Write Comments',
+        placeholder: 'Write Comments',
         avatar:'mm',
         guest_info:guest,
-        pageSize:'10' || 10,
+        pageSize:'' || 10,
     });
 	//增加以下六行代码去除 power by valine
     var infoEle = document.querySelector('#comments .info');

@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="对象 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。Python 中的对象 亦是如此，一个对象的特征称为“属性”，一个对象的行为称为“方法”。总而言之，对象&#x3D;属性+方法">
+<meta name="description" content="对象 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 中的 类和对象">
 <meta property="og:url" content="http://example.com/posts/bdb2/index.html">
 <meta property="og:site_name" content="FYP Record">
-<meta property="og:description" content="对象 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。Python 中的对象 亦是如此，一个对象的特征称为“属性”，一个对象的行为称为“方法”。总而言之，对象&#x3D;属性+方法">
+<meta property="og:description" content="对象 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-29T08:59:53.000Z">
-<meta property="article:modified_time" content="2021-01-29T14:30:45.175Z">
+<meta property="article:modified_time" content="2021-01-30T02:59:00.626Z">
 <meta property="article:author" content="Fan Haolin">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
     root: '',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -377,6 +377,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -389,7 +394,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  463
+                  461
                 </span>
               
 
@@ -426,16 +431,17 @@
       
 
       
-        <p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。<br>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
+        <p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。</p>
 <a id="more"></a>
+<p>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
 <hr>
-<h2 id="1-面对对象编程——self"><a href="#1-面对对象编程——self" class="headerlink" title="1. 面对对象编程——self"></a>1. 面对对象编程——self</h2><blockquote>
+<h2 id="面对对象编程——self"><a href="#面对对象编程——self" class="headerlink" title="面对对象编程——self"></a>面对对象编程——self</h2><blockquote>
 <p>如果将类比作图纸，那么由类实例化的对象才是真正可以住进去的房子。Python 中的self参数就是这样的道理，由同一个类可以生成无数对象，当第一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，那么python就知道需要操作哪个对象的方法了。</p>
 </blockquote>
 <p>通过一个简单的例子理解这一思想。</p>
 <h3 id="Code-block"><a href="#Code-block" class="headerlink" title="Code block"></a>Code block</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setNmae</span>(<span class="params">self, name</span>):</span></span><br><span class="line">    self.name = name</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">study</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(<span class="string">&quot;Who love studying?%s loves studying.&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = Study()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.setNmae(Fan Haolin)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.study()</span><br><span class="line">Who love studying?Fan Haolin loves studying.</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="2-Python-魔法方法——-“init-”"><a href="#2-Python-魔法方法——-“init-”" class="headerlink" title="2. Python 魔法方法—— “init()”"></a>2. Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
+<h2 id="Python-魔法方法——-“init-”"><a href="#Python-魔法方法——-“init-”" class="headerlink" title="Python 魔法方法—— “init()”"></a>Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
 <p>通常把此种方法称为构造方法，其魔法体现在只要实例化一个对象，这个方法就会在对象被创建时自动调用。其实，实例化对象是可以传入参数的，这些参数会自动传入<strong>init</strong>()中，可以通过重写这个方法以自定义对象的初始化操作。</p>
 </blockquote>
 <p>同样的一个简单的例子。</p>
@@ -576,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -598,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -638,6 +644,10 @@
                 
                 
                  <li class="recent_posts_li">
+                   <a href="/posts/40f8/" title="Python PDF Generator" target="_blank">Python PDF Generator</a>
+                 </li>
+                
+                 <li class="recent_posts_li">
                    <a href="/posts/81b9/" title="Kivy Introduction and Trial" target="_blank">Kivy Introduction and Trial</a>
                  </li>
                 
@@ -675,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E2%80%94%E2%80%94self"><span class="nav-number">1.</span> <span class="nav-text">1. 面对对象编程——self</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-block"><span class="nav-number">1.1.</span> <span class="nav-text">Code block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Python-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94-%E2%80%9Cinit-%E2%80%9D"><span class="nav-number">2.</span> <span class="nav-text">2. Python 魔法方法—— “init()”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-block-1"><span class="nav-number">2.1.</span> <span class="nav-text">Code block</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E2%80%94%E2%80%94self"><span class="nav-number">1.</span> <span class="nav-text">面对对象编程——self</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-block"><span class="nav-number">1.1.</span> <span class="nav-text">Code block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94-%E2%80%9Cinit-%E2%80%9D"><span class="nav-number">2.</span> <span class="nav-text">Python 魔法方法—— “init()”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-block-1"><span class="nav-number">2.1.</span> <span class="nav-text">Code block</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -709,25 +719,37 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">943</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -742,6 +764,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -776,6 +800,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -813,6 +840,16 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
@@ -884,21 +921,22 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
         el: '#comments' ,
+		lang: 'en',
         verify: false,
         notify: true,
 		admin_email:'17222032@bjtu.edu.cn',
         appId: 'tW0hD3F2PsjBgbgmUi3TMn3R-MdYXbMMI',
         appKey: 'GikkEulXaz06uUUpPRK9NILa',
-        placeholder: '&#x270d;Write Comments',
+        placeholder: 'Write Comments',
         avatar:'mm',
         guest_info:guest,
-        pageSize:'10' || 10,
+        pageSize:'' || 10,
     });
 	//增加以下六行代码去除 power by valine
     var infoEle = document.querySelector('#comments .info');

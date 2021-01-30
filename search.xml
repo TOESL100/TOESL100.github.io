@@ -27,22 +27,70 @@
 </tr>
 </tbody></table>
 <h3 id="Current-Content"><a href="#Current-Content" class="headerlink" title="Current Content"></a>Current Content</h3><ul>
-<li><input checked="" disabled="" type="checkbox"> Fundamental Python</li>
-<li><input checked="" disabled="" type="checkbox"> Kivy Framework</li>
-<li><input disabled="" type="checkbox"> Deep Learning</li>
+<li><input checked disabled type="checkbox"> Fundamental Python</li>
+<li><input checked disabled type="checkbox"> Kivy Framework</li>
+<li><input disabled type="checkbox"> Deep Learning</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> Currently it is only basical introduced. </p>
 </blockquote>
 <h2 id="Feedback-amp-Bug-Report"><a href="#Feedback-amp-Bug-Report" class="headerlink" title="Feedback &amp; Bug Report"></a>Feedback &amp; Bug Report</h2><p>You can leave a message via Github </p>
 <ul>
-<li>Email: <a href="mailto:&#x66;&#104;&#x6c;&#x69;&#x65;&#108;&#116;&#115;&#56;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x66;&#104;&#x6c;&#x69;&#x65;&#108;&#116;&#115;&#56;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>Email: <a href="mailto:&#x66;&#104;&#108;&#x69;&#101;&#108;&#116;&#115;&#x38;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x66;&#104;&#108;&#x69;&#101;&#108;&#116;&#115;&#x38;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
 </ul>
 <hr>
-<p>Thank you for reading this manual. </p>
+<p>Thank you for reading this manual. Looking for your advice!</p>
 ]]></content>
       <tags>
         <tag>Introduction</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python PDF Generator</title>
+    <url>/posts/40f8/</url>
+    <content><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>I met this question since the demand for the generation of digital records for the patients based on the analysis process.<br>It is intersting that python has the ability to generate files with <strong>different formats</strong> like .doc and .pdf .<br>Thus it is worth noting that the import package named <a href="https://www.reportlab.com/">ReportLab</a>.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Code-Trial"><a href="#Code-Trial" class="headerlink" title="Code Trial"></a>Code Trial</h2><p>The following code section can be found after I put the project at the [GitHub][2]</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_pdf</span>():</span></span><br><span class="line">    swelling = gl.get_value(<span class="string">&#x27;swelling&#x27;</span>)</span><br><span class="line">    wound_area = area.wound_area</span><br><span class="line">    redness = area.redness_result</span><br><span class="line">    infection = area.infection_result</span><br><span class="line">    pus = area.pus_result</span><br><span class="line"></span><br><span class="line">    Story = []</span><br><span class="line">    logo = <span class="string">&quot;image/hospital1.png&quot;</span></span><br><span class="line">    input_image = <span class="string">&#x27;uploadimage/input.jpg&#x27;</span></span><br><span class="line">    contour = <span class="string">&#x27;outputimage/contour.jpg&#x27;</span></span><br><span class="line">    formatted_time = datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M&#x27;</span>)</span><br><span class="line">    full_name = <span class="string">&quot;Fan Haolin&quot;</span></span><br><span class="line"></span><br><span class="line">    im = Image(logo, <span class="number">1</span> * inch, <span class="number">1</span> * inch)</span><br><span class="line">    input_image = Image(input_image, <span class="number">3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    contour = Image(contour, <span class="number">2.3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    component_data = [[<span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Contour Result&#x27;</span>],</span><br><span class="line">                      [input_image, contour],</span><br><span class="line">                      ]</span><br><span class="line">    component_table = Table(component_data, colWidths=[<span class="number">230</span>, <span class="number">230</span>])</span><br><span class="line">    component_table.setStyle(TableStyle([</span><br><span class="line">        (<span class="string">&#x27;TOPPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># (列,行)坐标</span></span><br><span class="line">        (<span class="string">&#x27;BOTTOMPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># 在默认用户空间中，原点（0,0）点位于左下角</span></span><br><span class="line">        (<span class="string">&#x27;FONTSIZE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">14</span>),  <span class="comment"># 字体大小</span></span><br><span class="line">        (<span class="string">&#x27;BACKGROUND&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), colors.lightskyblue),  <span class="comment"># 设置第一行背景颜色</span></span><br><span class="line">        (<span class="string">&#x27;LINEBEFORE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, -<span class="number">1</span>), <span class="number">0.1</span>, colors.grey),  <span class="comment"># 设置表格左边线颜色为灰色，线宽为0.1</span></span><br><span class="line">        (<span class="string">&#x27;TEXTCOLOR&#x27;</span>, (<span class="number">0</span>, <span class="number">1</span>), (-<span class="number">2</span>, -<span class="number">1</span>), colors.royalblue),  <span class="comment"># 设置表格内文字颜色</span></span><br><span class="line">        <span class="comment"># (&#x27;ALIGN&#x27;, (0, 0), (-1, 0), &#x27;MIDDLE&#x27;),  # 对齐</span></span><br><span class="line">        (<span class="string">&#x27;VALIGN&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), <span class="string">&#x27;MIDDLE&#x27;</span>),  <span class="comment"># 对齐</span></span><br><span class="line">        (<span class="string">&#x27;GRID&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">0.6</span>, colors.red),  <span class="comment"># 设置表格框线为红色，线宽为0.5</span></span><br><span class="line">    ]))</span><br><span class="line"></span><br><span class="line">    Story.append(im)</span><br><span class="line">    <span class="comment"># Story.append(im2)</span></span><br><span class="line">    styles = getSampleStyleSheet()</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&quot;TitleStyle&quot;</span>, alignment=TA_CENTER, ))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;26&quot;&gt;Wound Analysis Report&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;TitleStyle&quot;</span>]))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter&#x27;</span>, fontName=<span class="string">&quot;dour&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter_title&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Corner&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_CENTER))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Justify&#x27;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">32</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Generation Date:%s&lt;/font&gt;&#x27;</span> % formatted_time</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Patient Name:%s&lt;/font&gt;&#x27;</span> % full_name</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Normal&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    Story.append(component_table)</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Swelling :<span class="subst">&#123;swelling&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Redness :<span class="subst">&#123;redness&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Pus :<span class="subst">&#123;pus&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Area :<span class="subst">&#123;wound_area&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Infection :<span class="subst">&#123;infection&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">45</span>))  <span class="comment"># length=1,width=50</span></span><br><span class="line"></span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;12&quot;&gt;Dear %s:&lt;/font&gt;&#x27;</span> % full_name.split()[<span class="number">0</span>].strip()</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line"></span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The above report is for reference only, please consult a professional doctor for &#x27;</span> \</span><br><span class="line">            <span class="string">f&#x27;details.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The Result will strictly abide by the doctor-patient confidentiality agreement.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Sincerely,&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Wound Analysis Application&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">28</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;10&quot;&gt;Copyright @ 2021 Wound Analysis All Rights Reserved.&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Corner&quot;</span>]))</span><br><span class="line">    doc.build(Story)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>[2]：<a href="https://github.com/TOESL100">https://github.com/TOESL100</a></p>
+]]></content>
+      <categories>
+        <category>Python Study</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -51,6 +99,8 @@
     <content><![CDATA[<h2 id="Introducing-Kivy"><a href="#Introducing-Kivy" class="headerlink" title="Introducing Kivy"></a>Introducing Kivy</h2><blockquote>
 <p><a href="https://kivy.org/#home">Kivy</a>-用于快速开发利用创新用户界面的应用程序（例如多点触摸应用程序）的开源Python库。<br>以下内容主要介绍 kivy 在Windows端的安装(基于Anoconda3,Pycharm)以及简单应用。</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="Kivy-Installation"><a href="#Kivy-Installation" class="headerlink" title="Kivy Installation"></a>Kivy Installation</h2><blockquote>
 <p>涉及到的所有依赖均通过cmd中的pip-install安装完成，感谢<a href="https://pypi.tuna.tsinghua.edu.cn/simple">清华镜像源</a>提供的帮助。</p>
 </blockquote>
@@ -58,8 +108,6 @@
 <blockquote>
 <p>因为中国国内对kivy的普及程度不高，且多数app开发仍然使用原生的Java 语言作为底层基础，因而以下对kivy框架的背景、搭建、使用做一个简要的介绍</p>
 </blockquote>
-<a id="more"></a>
-
 <h2 id="Kivy框架的安装与使用"><a href="#Kivy框架的安装与使用" class="headerlink" title="Kivy框架的安装与使用"></a>Kivy框架的安装与使用</h2><p>1.通过以下命令进行kivy框架的搭建与使用，主要有两种方法:<br>三行命令以安装Kivy:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -m pip install docutils pygments pypiwin64 kivy.deps.sdl2 kivy.deps.glew</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -m pip install kivy.deps.gstreamer</span><br></pre></td></tr></table></figure>
@@ -85,16 +133,17 @@
   <entry>
     <title>Python 中的 类和对象</title>
     <url>/posts/bdb2/</url>
-    <content><![CDATA[<p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。<br>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
+    <content><![CDATA[<p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。</p>
 <a id="more"></a>
+<p>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
 <hr>
-<h2 id="1-面对对象编程——self"><a href="#1-面对对象编程——self" class="headerlink" title="1. 面对对象编程——self"></a>1. 面对对象编程——self</h2><blockquote>
+<h2 id="面对对象编程——self"><a href="#面对对象编程——self" class="headerlink" title="面对对象编程——self"></a>面对对象编程——self</h2><blockquote>
 <p>如果将类比作图纸，那么由类实例化的对象才是真正可以住进去的房子。Python 中的self参数就是这样的道理，由同一个类可以生成无数对象，当第一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，那么python就知道需要操作哪个对象的方法了。</p>
 </blockquote>
 <p>通过一个简单的例子理解这一思想。</p>
 <h3 id="Code-block"><a href="#Code-block" class="headerlink" title="Code block"></a>Code block</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setNmae</span>(<span class="params">self, name</span>):</span></span><br><span class="line">    self.name = name</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">study</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(<span class="string">&quot;Who love studying?%s loves studying.&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = Study()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.setNmae(Fan Haolin)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.study()</span><br><span class="line">Who love studying?Fan Haolin loves studying.</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="2-Python-魔法方法——-“init-”"><a href="#2-Python-魔法方法——-“init-”" class="headerlink" title="2. Python 魔法方法—— “init()”"></a>2. Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
+<h2 id="Python-魔法方法——-“init-”"><a href="#Python-魔法方法——-“init-”" class="headerlink" title="Python 魔法方法—— “init()”"></a>Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
 <p>通常把此种方法称为构造方法，其魔法体现在只要实例化一个对象，这个方法就会在对象被创建时自动调用。其实，实例化对象是可以传入参数的，这些参数会自动传入<strong>init</strong>()中，可以通过重写这个方法以自定义对象的初始化操作。</p>
 </blockquote>
 <p>同样的一个简单的例子。</p>

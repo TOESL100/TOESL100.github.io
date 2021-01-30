@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Python,Tools," />
+  <meta name="keywords" content="Python,Deep Learning," />
 
 
 
@@ -86,19 +86,21 @@
 
 
 
-<meta name="description" content="Introduction I met this question since the demand for the generation of digital records for the patients based on the analysis process.It is intersting that python has the ability to generate files wi">
+<meta name="description" content="激活函数（Activation Function)神经网络中将输入信号的总和转化为输出信号的的函数。其作用在于如何来激活输入信号的总和。It converts the sum of the input signal to the output signal. Its role is to determine how to activate the sum of input signals.The">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python PDF Generator">
-<meta property="og:url" content="http://example.com/posts/40f8/index.html">
+<meta property="og:title" content="Deep Learning-Activation Function">
+<meta property="og:url" content="http://example.com/posts/a2d2/index.html">
 <meta property="og:site_name" content="FYP Record">
-<meta property="og:description" content="Introduction I met this question since the demand for the generation of digital records for the patients based on the analysis process.It is intersting that python has the ability to generate files wi">
+<meta property="og:description" content="激活函数（Activation Function)神经网络中将输入信号的总和转化为输出信号的的函数。其作用在于如何来激活输入信号的总和。It converts the sum of the input signal to the output signal. Its role is to determine how to activate the sum of input signals.The">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-29T15:43:46.000Z">
-<meta property="article:modified_time" content="2021-01-30T06:27:54.904Z">
+<meta property="og:image" content="http://example.com/posts/a2d2/Sigmoid.png">
+<meta property="article:published_time" content="2021-01-30T13:57:51.000Z">
+<meta property="article:modified_time" content="2021-01-30T15:26:35.927Z">
 <meta property="article:author" content="Fan Haolin">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="Tools">
+<meta property="article:tag" content="Deep Learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/posts/a2d2/Sigmoid.png">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/posts/40f8/"/>
+  <link rel="canonical" href="http://example.com/posts/a2d2/"/>
 
 
 
 
 
-  <title>Python PDF Generator | FYP Record</title>
+  <title>Deep Learning-Activation Function | FYP Record</title>
   
 
 
@@ -295,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/40f8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/a2d2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -312,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python PDF Generator</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Learning-Activation Function</h1>
         
 
         <div class="post-meta">
@@ -326,8 +328,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-29T23:43:46+08:00">
-                2021-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-30T21:57:51+08:00">
+                2021-01-30
               </time>
             
 
@@ -349,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-Study/" itemprop="url" rel="index">
-                    <span itemprop="name">Python Study</span>
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
                   </a>
                 </span>
 
@@ -367,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/40f8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/40f8/" itemprop="commentsCount"></span>
+                <a href="/posts/a2d2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/a2d2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -395,7 +397,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1k
+                  376
                 </span>
               
 
@@ -411,7 +413,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  6
+                  1
                 </span>
               
             </div>
@@ -432,32 +434,21 @@
       
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><blockquote>
-<p>I met this question since the demand for the generation of digital records for the patients based on the analysis process.<br>It is intersting that python has the ability to generate files with <strong>different formats</strong> like .doc and .pdf .<br>Thus it is worth noting that the import package named <a target="_blank" rel="noopener" href="https://www.reportlab.com/">ReportLab</a>.</p>
+        <blockquote>
+<p><strong>激活函数</strong>（Activation Function)神经网络中将输入信号的总和转化为输出信号的的函数。其作用在于如何来激活输入信号的总和。<br>It converts the sum of the input signal to the output signal. Its role is to determine how to activate the sum of input signals.The activation function of neural network must use nonlinear function.</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="Intstallation"><a href="#Intstallation" class="headerlink" title="Intstallation"></a>Intstallation</h1><p>The following code is used for installing ReportLab </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install reportlab -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-<h2 id="Regist-Fontname"><a href="#Regist-Fontname" class="headerlink" title="Regist Fontname"></a>Regist Fontname</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> reportlab.pdfbase <span class="keyword">import</span> pdfmetrics</span><br><span class="line"><span class="keyword">from</span> reportlab.pdfbase.ttfonts <span class="keyword">import</span> TTFont</span><br><span class="line"></span><br><span class="line">pdfmetrics.registerFont(TTFont(<span class="string">&#x27;Fontname&#x27;</span>, Fontname.ttf))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Note:</strong> The font package must be allocated in the project content.</p>
+
+<hr>
+<h1 id="几种常见的激活函数以及Python实现"><a href="#几种常见的激活函数以及Python实现" class="headerlink" title="几种常见的激活函数以及Python实现"></a>几种常见的激活函数以及Python实现</h1><p>以下主要简要介绍几种常见的激活函数以及python实现</p>
+<h2 id="Sigmoid-函数"><a href="#Sigmoid-函数" class="headerlink" title="Sigmoid 函数"></a>Sigmoid 函数</h2><p>神经网络中常用的一个激活函数为Sigmoid 函数，其数学表达式为：<br>$$    x = \dfrac{1}{1+e^{-x}} $$<br>其Python实现方法以及图示绘制为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> mpl_toolkits.axisartist <span class="keyword">as</span> axisartist</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_sigmoid</span>():</span></span><br><span class="line">    x = np.arange(-<span class="number">5.0</span>, <span class="number">5.0</span>, <span class="number">0.1</span>)</span><br><span class="line">    y = sigmoid(x)</span><br><span class="line">    plt.plot(x, y)</span><br><span class="line">    plt.ylim(-<span class="number">0.1</span>, <span class="number">1.1</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Sigmoid Function&#x27;</span>)</span><br><span class="line">    <span class="comment"># plt.xlabel(&#x27;X Axis&#x27;)</span></span><br><span class="line">    <span class="comment"># plt.ylabel(&#x27;Y Axis&#x27;)</span></span><br><span class="line">    <span class="comment"># plt.tight_layout()</span></span><br><span class="line">    ax = plt.gca()</span><br><span class="line">    ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">    ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">    ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line">    ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line">    ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line">    ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(<span class="number">0.5</span>))</span><br><span class="line">    plt.savefig(<span class="string">&quot;sigmoid.png&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">	</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    plot_sigmoid()</span><br></pre></td></tr></table></figure>
+<p>其结果展示如下：<br><img src="/posts/a2d2/Sigmoid.png" alt="Outcome for Sigmoid"></p>
+<h2 id="ReLU-函数"><a href="#ReLU-函数" class="headerlink" title="ReLU 函数"></a>ReLU 函数</h2><blockquote>
+<p>ReLU 函数的全程为 Rectified Linear Unit，即意为校正线性单元。</p>
 </blockquote>
-<h2 id="Text-Generation"><a href="#Text-Generation" class="headerlink" title="Text Generation"></a>Text Generation</h2><p>The next step is using code to generate text,which is demonstrated as follow:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> reportlab.lib.styles <span class="keyword">import</span> getSampleStyleSheet</span><br><span class="line"><span class="keyword">from</span> reportlab.platypus <span class="keyword">import</span> Paragraph,SimpleDocTemplate</span><br><span class="line"><span class="keyword">from</span> reportlab.lib <span class="keyword">import</span>  colors</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Style=getSampleStyleSheet()</span><br><span class="line">bt = Style[<span class="string">&#x27;Normal&#x27;</span>]     </span><br><span class="line"><span class="comment"># bt.fontName=&#x27;Fontname&#x27;    #Customer-setting</span></span><br><span class="line">bt.fontSize=<span class="number">14</span>          <span class="comment">#Fontsize</span></span><br><span class="line">bt.firstLineIndent = <span class="number">32</span> <span class="comment">#This attribute supports spaces at the beginning of the first line</span></span><br><span class="line">bt.leading = <span class="number">20</span>         <span class="comment">#This attribute is to set the line spacing</span></span><br><span class="line">ct=Style[<span class="string">&#x27;Normal&#x27;</span>]</span><br><span class="line"><span class="comment"># ct.fontName=&#x27;Fontname&#x27;</span></span><br><span class="line">ct.fontSize=<span class="number">12</span></span><br><span class="line">ct.alignment=<span class="number">1</span>          <span class="comment">#center alignment</span></span><br><span class="line">ct.textColor = colors.red</span><br><span class="line">hello = Paragraph(<span class="string">&#x27;hello world&#x27;</span>,bt)</span><br><span class="line">pdf=SimpleDocTemplate(<span class="string">&#x27;test.pdf&#x27;</span>)</span><br><span class="line">pdf.multiBuild([hello])</span><br></pre></td></tr></table></figure>
-<h1 id="Code-Trial"><a href="#Code-Trial" class="headerlink" title="Code Trial"></a>Code Trial</h1><p>The following code section can be found after I put the project at the <a target="_blank" rel="noopener" href="https://github.com/TOESL100">GitHub</a>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_pdf</span>():</span></span><br><span class="line">    swelling = gl.get_value(<span class="string">&#x27;swelling&#x27;</span>)</span><br><span class="line">    wound_area = area.wound_area</span><br><span class="line">    redness = area.redness_result</span><br><span class="line">    infection = area.infection_result</span><br><span class="line">    pus = area.pus_result</span><br><span class="line"></span><br><span class="line">    Story = []</span><br><span class="line">    logo = <span class="string">&quot;image/hospital1.png&quot;</span></span><br><span class="line">    input_image = <span class="string">&#x27;uploadimage/input.jpg&#x27;</span></span><br><span class="line">    contour = <span class="string">&#x27;outputimage/contour.jpg&#x27;</span></span><br><span class="line">    formatted_time = datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M&#x27;</span>)</span><br><span class="line">    full_name = <span class="string">&quot;Fan Haolin&quot;</span></span><br><span class="line"></span><br><span class="line">    im = Image(logo, <span class="number">1</span> * inch, <span class="number">1</span> * inch)</span><br><span class="line">    input_image = Image(input_image, <span class="number">3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    contour = Image(contour, <span class="number">2.3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    component_data = [[<span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Contour Result&#x27;</span>],</span><br><span class="line">                      [input_image, contour],</span><br><span class="line">                      ]</span><br><span class="line">    component_table = Table(component_data, colWidths=[<span class="number">230</span>, <span class="number">230</span>])</span><br><span class="line">    component_table.setStyle(TableStyle([</span><br><span class="line">        (<span class="string">&#x27;TOPPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># (列,行)坐标</span></span><br><span class="line">        (<span class="string">&#x27;BOTTOMPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># 在默认用户空间中，原点（0,0）点位于左下角</span></span><br><span class="line">        (<span class="string">&#x27;FONTSIZE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">14</span>),  <span class="comment"># 字体大小</span></span><br><span class="line">        (<span class="string">&#x27;BACKGROUND&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), colors.lightskyblue),  <span class="comment"># 设置第一行背景颜色</span></span><br><span class="line">        (<span class="string">&#x27;LINEBEFORE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, -<span class="number">1</span>), <span class="number">0.1</span>, colors.grey),  <span class="comment"># 设置表格左边线颜色为灰色，线宽为0.1</span></span><br><span class="line">        (<span class="string">&#x27;TEXTCOLOR&#x27;</span>, (<span class="number">0</span>, <span class="number">1</span>), (-<span class="number">2</span>, -<span class="number">1</span>), colors.royalblue),  <span class="comment"># 设置表格内文字颜色</span></span><br><span class="line">        <span class="comment"># (&#x27;ALIGN&#x27;, (0, 0), (-1, 0), &#x27;MIDDLE&#x27;),  # 对齐</span></span><br><span class="line">        (<span class="string">&#x27;VALIGN&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), <span class="string">&#x27;MIDDLE&#x27;</span>),  <span class="comment"># 对齐</span></span><br><span class="line">        (<span class="string">&#x27;GRID&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">0.6</span>, colors.red),  <span class="comment"># 设置表格框线为红色，线宽为0.5</span></span><br><span class="line">    ]))</span><br><span class="line"></span><br><span class="line">    Story.append(im)</span><br><span class="line">    <span class="comment"># Story.append(im2)</span></span><br><span class="line">    styles = getSampleStyleSheet()</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&quot;TitleStyle&quot;</span>, alignment=TA_CENTER, ))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;26&quot;&gt;Wound Analysis Report&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;TitleStyle&quot;</span>]))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter&#x27;</span>, fontName=<span class="string">&quot;dour&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter_title&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Corner&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_CENTER))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Justify&#x27;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">32</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Generation Date:%s&lt;/font&gt;&#x27;</span> % formatted_time</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Patient Name:%s&lt;/font&gt;&#x27;</span> % full_name</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Normal&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    Story.append(component_table)</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Swelling :<span class="subst">&#123;swelling&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Redness :<span class="subst">&#123;redness&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Pus :<span class="subst">&#123;pus&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Area :<span class="subst">&#123;wound_area&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Infection :<span class="subst">&#123;infection&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">45</span>))  <span class="comment"># length=1,width=50</span></span><br><span class="line"></span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;12&quot;&gt;Dear %s:&lt;/font&gt;&#x27;</span> % full_name.split()[<span class="number">0</span>].strip()</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line"></span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The above report is for reference only, please consult a professional doctor for &#x27;</span> \</span><br><span class="line">            <span class="string">f&#x27;details.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The Result will strictly abide by the doctor-patient confidentiality agreement.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Sincerely,&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Wound Analysis Application&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">28</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;10&quot;&gt;Copyright @ 2021 Wound Analysis All Rights Reserved.&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Corner&quot;</span>]))</span><br><span class="line">    doc.build(Story)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
+<p>其函数特征为：ReLU 函数在输入大于0时，直接输出该值；在输入小于0时，输出0，其python实现为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">relu</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> np.where(x &lt; <span class="number">0</span>, <span class="number">0</span>, x)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -478,7 +469,7 @@
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/Tools/" rel="tag"><i class="fa fa-tag"></i> Tools</a>
+            <a href="/tags/Deep-Learning/" rel="tag"><i class="fa fa-tag"></i> Deep Learning</a>
           
         </div>
       
@@ -506,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/81b9/" rel="next" title="Kivy Introduction and Trial">
-                <i class="fa fa-chevron-left"></i> Kivy Introduction and Trial
+              <a href="/posts/40f8/" rel="next" title="Python PDF Generator">
+                <i class="fa fa-chevron-left"></i> Python PDF Generator
               </a>
             
           </div>
@@ -515,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/a2d2/" rel="prev" title="Deep Learning-Activation Function">
-                Deep Learning-Activation Function <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -713,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intstallation"><span class="nav-number">2.</span> <span class="nav-text">Intstallation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Regist-Fontname"><span class="nav-number">2.1.</span> <span class="nav-text">Regist Fontname</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-Generation"><span class="nav-number">2.2.</span> <span class="nav-text">Text Generation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-Trial"><span class="nav-number">3.</span> <span class="nav-text">Code Trial</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8APython%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">几种常见的激活函数以及Python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sigmoid-%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Sigmoid 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReLU-%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">ReLU 函数</span></a></li></ol></li></ol></div>
             
 
           </div>

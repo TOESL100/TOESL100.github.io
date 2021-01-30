@@ -94,7 +94,7 @@
 <meta property="og:description" content="Introduction I met this question since the demand for the generation of digital records for the patients based on the analysis process.It is intersting that python has the ability to generate files wi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-29T15:43:46.000Z">
-<meta property="article:modified_time" content="2021-01-29T16:03:59.819Z">
+<meta property="article:modified_time" content="2021-01-30T04:08:17.425Z">
 <meta property="article:author" content="Fan Haolin">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Tools">
@@ -368,13 +368,24 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/posts/40f8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/40f8/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/40f8/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
           
 
           
+          
+             <span id="/posts/40f8/" class="leancloud_visitors" data-flag-title="Python PDF Generator">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -436,22 +447,8 @@
 <p>I met this question since the demand for the generation of digital records for the patients based on the analysis process.<br>It is intersting that python has the ability to generate files with <strong>different formats</strong> like .doc and .pdf .<br>Thus it is worth noting that the import package named <a target="_blank" rel="noopener" href="https://www.reportlab.com/">ReportLab</a>.</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Code-Trial"><a href="#Code-Trial" class="headerlink" title="Code Trial"></a>Code Trial</h2><p>The following code section can be found after I put the project at the [GitHub][2]</p>
+<h2 id="Code-Trial"><a href="#Code-Trial" class="headerlink" title="Code Trial"></a>Code Trial</h2><p>The following code section can be found after I put the project at the [GitHub][2].</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_pdf</span>():</span></span><br><span class="line">    swelling = gl.get_value(<span class="string">&#x27;swelling&#x27;</span>)</span><br><span class="line">    wound_area = area.wound_area</span><br><span class="line">    redness = area.redness_result</span><br><span class="line">    infection = area.infection_result</span><br><span class="line">    pus = area.pus_result</span><br><span class="line"></span><br><span class="line">    Story = []</span><br><span class="line">    logo = <span class="string">&quot;image/hospital1.png&quot;</span></span><br><span class="line">    input_image = <span class="string">&#x27;uploadimage/input.jpg&#x27;</span></span><br><span class="line">    contour = <span class="string">&#x27;outputimage/contour.jpg&#x27;</span></span><br><span class="line">    formatted_time = datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M&#x27;</span>)</span><br><span class="line">    full_name = <span class="string">&quot;Fan Haolin&quot;</span></span><br><span class="line"></span><br><span class="line">    im = Image(logo, <span class="number">1</span> * inch, <span class="number">1</span> * inch)</span><br><span class="line">    input_image = Image(input_image, <span class="number">3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    contour = Image(contour, <span class="number">2.3</span> * inch, <span class="number">2</span> * inch)</span><br><span class="line">    component_data = [[<span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Contour Result&#x27;</span>],</span><br><span class="line">                      [input_image, contour],</span><br><span class="line">                      ]</span><br><span class="line">    component_table = Table(component_data, colWidths=[<span class="number">230</span>, <span class="number">230</span>])</span><br><span class="line">    component_table.setStyle(TableStyle([</span><br><span class="line">        (<span class="string">&#x27;TOPPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># (列,行)坐标</span></span><br><span class="line">        (<span class="string">&#x27;BOTTOMPADDING&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">8</span>),  <span class="comment"># 在默认用户空间中，原点（0,0）点位于左下角</span></span><br><span class="line">        (<span class="string">&#x27;FONTSIZE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">14</span>),  <span class="comment"># 字体大小</span></span><br><span class="line">        (<span class="string">&#x27;BACKGROUND&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), colors.lightskyblue),  <span class="comment"># 设置第一行背景颜色</span></span><br><span class="line">        (<span class="string">&#x27;LINEBEFORE&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, -<span class="number">1</span>), <span class="number">0.1</span>, colors.grey),  <span class="comment"># 设置表格左边线颜色为灰色，线宽为0.1</span></span><br><span class="line">        (<span class="string">&#x27;TEXTCOLOR&#x27;</span>, (<span class="number">0</span>, <span class="number">1</span>), (-<span class="number">2</span>, -<span class="number">1</span>), colors.royalblue),  <span class="comment"># 设置表格内文字颜色</span></span><br><span class="line">        <span class="comment"># (&#x27;ALIGN&#x27;, (0, 0), (-1, 0), &#x27;MIDDLE&#x27;),  # 对齐</span></span><br><span class="line">        (<span class="string">&#x27;VALIGN&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>), <span class="string">&#x27;MIDDLE&#x27;</span>),  <span class="comment"># 对齐</span></span><br><span class="line">        (<span class="string">&#x27;GRID&#x27;</span>, (<span class="number">0</span>, <span class="number">0</span>), (-<span class="number">1</span>, -<span class="number">1</span>), <span class="number">0.6</span>, colors.red),  <span class="comment"># 设置表格框线为红色，线宽为0.5</span></span><br><span class="line">    ]))</span><br><span class="line"></span><br><span class="line">    Story.append(im)</span><br><span class="line">    <span class="comment"># Story.append(im2)</span></span><br><span class="line">    styles = getSampleStyleSheet()</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&quot;TitleStyle&quot;</span>, alignment=TA_CENTER, ))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;26&quot;&gt;Wound Analysis Report&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;TitleStyle&quot;</span>]))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter&#x27;</span>, fontName=<span class="string">&quot;dour&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Letter_title&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Corner&#x27;</span>, fontName=<span class="string">&quot;times_b2&quot;</span>, alignment=TA_CENTER))</span><br><span class="line">    styles.add(ParagraphStyle(name=<span class="string">&#x27;Justify&#x27;</span>, alignment=TA_JUSTIFY))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">32</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Generation Date:%s&lt;/font&gt;&#x27;</span> % formatted_time</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;14&quot;&gt;Patient Name:%s&lt;/font&gt;&#x27;</span> % full_name</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Normal&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    Story.append(component_table)</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Swelling :<span class="subst">&#123;swelling&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Redness :<span class="subst">&#123;redness&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Pus :<span class="subst">&#123;pus&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Area :<span class="subst">&#123;wound_area&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;14&quot;&gt;Infection :<span class="subst">&#123;infection&#125;</span>  &lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">45</span>))  <span class="comment"># length=1,width=50</span></span><br><span class="line"></span><br><span class="line">    ptext = <span class="string">&#x27;&lt;font size=&quot;12&quot;&gt;Dear %s:&lt;/font&gt;&#x27;</span> % full_name.split()[<span class="number">0</span>].strip()</span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line"></span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The above report is for reference only, please consult a professional doctor for &#x27;</span> \</span><br><span class="line">            <span class="string">f&#x27;details.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;The Result will strictly abide by the doctor-patient confidentiality agreement.&lt;/font&gt; &#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Justify&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">24</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Sincerely,&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">12</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;12&quot;&gt;Wound Analysis Application&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Letter_title&quot;</span>]))</span><br><span class="line">    Story.append(Spacer(<span class="number">1</span>, <span class="number">28</span>))</span><br><span class="line">    ptext = <span class="string">f&#x27;&lt;font size=&quot;10&quot;&gt;Copyright @ 2021 Wound Analysis All Rights Reserved.&lt;/font&gt;&#x27;</span></span><br><span class="line">    Story.append(Paragraph(ptext, styles[<span class="string">&quot;Corner&quot;</span>]))</span><br><span class="line">    doc.build(Story)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -554,7 +551,11 @@
 
   
     <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
     </div>
+
   
 
 
@@ -745,9 +746,6 @@
 </div>
 
 
-
-
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
         
@@ -1294,6 +1292,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("tW0hD3F2PsjBgbgmUi3TMn3R-MdYXbMMI<app_id>", "GikkEulXaz06uUUpPRK9NILa<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

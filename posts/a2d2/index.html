@@ -396,8 +396,8 @@
 <a id="more"></a>
 
 <hr>
-<h1 id="几种常见的激活函数以及Python实现"><a href="#几种常见的激活函数以及Python实现" class="headerlink" title="几种常见的激活函数以及Python实现"></a>几种常见的激活函数以及Python实现</h1><p>以下主要简要介绍几种常见的激活函数以及python实现</p>
-<h2 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h2><p>Sigmoid 函数的平滑性对神经网络的学习具有重要意义<br>神经网络中常用的一个激活函数为Sigmoid 函数，其数学表达式为：<br>$$    Sigmoid(x) = \dfrac{1}{1+e^{-x}} $$<br>其Python实现方法以及图示绘制为：</p>
+<h2 id="几种常见的激活函数以及Python实现"><a href="#几种常见的激活函数以及Python实现" class="headerlink" title="几种常见的激活函数以及Python实现"></a>几种常见的激活函数以及Python实现</h2><p>以下主要简要介绍几种常见的激活函数以及python实现</p>
+<h3 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h3><p>Sigmoid 函数的平滑性对神经网络的学习具有重要意义<br>神经网络中常用的一个激活函数为Sigmoid 函数，其数学表达式为：<br>$$    Sigmoid(x) = \dfrac{1}{1+e^{-x}} $$<br>其Python实现方法以及图示绘制为：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> mpl_toolkits<span class="token punctuation">.</span>axisartist <span class="token keyword">as</span> axisartist
@@ -432,7 +432,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其结果展示如下：<br><img src="/posts/a2d2/Sigmoid.png" alt="Outcome for Sigmoid"></p>
 <hr>
-<h2 id="ReLU-Function"><a href="#ReLU-Function" class="headerlink" title="ReLU Function"></a>ReLU Function</h2><p><strong>ReLU 函数</strong>的全程为 Rectified Linear Unit，即意为<em>校正线性单元</em>。</p>
+<h3 id="ReLU-Function"><a href="#ReLU-Function" class="headerlink" title="ReLU Function"></a>ReLU Function</h3><p><strong>ReLU 函数</strong>的全程为 Rectified Linear Unit，即意为<em>校正线性单元</em>。</p>
 <p>其函数特征为：ReLU 函数在输入大于0时，直接输出该值；在输入小于0时，输出0，其python实现可以通过以下两种方式：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">relu</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>
@@ -444,7 +444,7 @@
 <p>补充：<strong>shape函数</strong>的功能是读取矩阵的长度，比如shape[0]就是读取矩阵第一维度的长度,相当于行数。</p>
 </blockquote>
 <hr>
-<h2 id="Tanh-Function"><a href="#Tanh-Function" class="headerlink" title="Tanh Function"></a>Tanh Function</h2><p>Tanh Function 的数学表达式为：<br>$$<br>\begin{align}<br>        Tanh(x) &amp;= \dfrac{e^{x}-e^{-x}}{e^{x}+e^{-x}}<br>\end{align}<br>$$</p>
+<h3 id="Tanh-Function"><a href="#Tanh-Function" class="headerlink" title="Tanh Function"></a>Tanh Function</h3><p>Tanh Function 的数学表达式为：<br>$$<br>\begin{align}<br>        Tanh(x) &amp;= \dfrac{e^{x}-e^{-x}}{e^{x}+e^{-x}}<br>\end{align}<br>$$</p>
 <p>其Python 的实现具体实现为：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">tanh</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">-</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -462,7 +462,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>此种方法绘制的图线<em>没有坐标轴</em>因此可能缺乏严谨性，可以加以区分，其绘制的结果如下图所示：<br><img src="/posts/a2d2/Tanh.png" alt="Outcome for Tanh"></p>
 <hr>
-<h1 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h1><p><strong>这里需要提到，Sigmoid 函数为非线性函数(阶跃函数也为非线性函数)</strong></p>
+<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数(阶跃函数也为非线性函数)</strong></p>
 <blockquote>
 <p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em></p>
 </blockquote>

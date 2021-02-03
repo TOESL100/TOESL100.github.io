@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ielts7.gitee.io/posts/40f8/</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ielts7.gitee.io/posts/a2d2/</loc>
     
-    <lastmod>2021-01-31</lastmod>
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/posts/81b9/</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/posts/4b7b/</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/about/index.html</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/tags/index.html</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2021-02-03</lastmod>
     
   </url>
   
@@ -23,42 +65,7 @@
   </url>
   
   <url>
-    <loc>https://ielts7.gitee.io/posts/4b7b/</loc>
-    
-    <lastmod>2021-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/posts/40f8/</loc>
-    
-    <lastmod>2021-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/tags/index.html</loc>
-    
-    <lastmod>2021-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/categories/index.html</loc>
-    
-    <lastmod>2021-01-30</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ielts7.gitee.io/posts/bdb2/</loc>
-    
-    <lastmod>2021-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/posts/81b9/</loc>
     
     <lastmod>2021-01-30</lastmod>
     
@@ -67,7 +74,7 @@
 
   <url>
     <loc>https://ielts7.gitee.io/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,35 +82,35 @@
   
   <url>
     <loc>https://ielts7.gitee.io/tags/Python/</loc>
-    <lastmod>2021-02-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/tags/Tools/</loc>
-    <lastmod>2021-02-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/tags/Introduction/</loc>
-    <lastmod>2021-02-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/tags/Kivy/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://ielts7.gitee.io/tags/Deep-Learning/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/tags/Tools/</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/tags/Introduction/</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ielts7.gitee.io/tags/Kivy/</loc>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -111,22 +118,22 @@
 
   
   <url>
+    <loc>https://ielts7.gitee.io/categories/Deep-Learning/</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ielts7.gitee.io/categories/Python-Study/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://ielts7.gitee.io/categories/Kivy-Study/</loc>
-    <lastmod>2021-02-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ielts7.gitee.io/categories/Deep-Learning/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

@@ -294,7 +294,20 @@
     #toc-content .is-active-link {
         color: #42b983;
     }
+	
 
+	#toc-content .is-active-link::before {
+		background-color: #42b983;
+	}
+	#floating-toc-btn {
+		position: fixed;
+		right: 15px;
+		bottom: 76px;
+		padding-top: 15px;
+		margin-bottom: 0;
+		z-index: 998;
+	}
+	
     #floating-toc-btn {
         position: fixed;
         right: 15px;

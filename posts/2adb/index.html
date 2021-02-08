@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Deep Learning-Activation Function, FYP Record">
+    <meta name="keywords" content="FYP Application Introduction, FYP Record">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Deep Learning-Activation Function | FYP Record</title>
+    <title>FYP Application Introduction | FYP Record</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -204,12 +204,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Deep Learning-Activation Function</h1>
+                    <h1 class="description center-align post-title">FYP Application Introduction</h1>
                 </div>
             </div>
         </div>
@@ -338,12 +338,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/Kivy/">
+                                <span class="chip bg-color">Kivy</span>
                             </a>
                         
-                            <a href="/tags/Deep-Learning/">
-                                <span class="chip bg-color">Deep Learning</span>
+                            <a href="/tags/FYP/">
+                                <span class="chip bg-color">FYP</span>
                             </a>
                         
                     </div>
@@ -354,8 +354,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Deep-Learning/" class="post-category">
-                                Deep Learning
+                            <a href="/categories/FYP-Record/" class="post-category">
+                                FYP Record
                             </a>
                         
                     </div>
@@ -367,7 +367,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-30
+                    2021-02-07
                 </div>
                 
 
@@ -376,14 +376,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    885
+                    171
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    1 Min
                 </div>
                 
 
@@ -403,83 +403,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p><strong>激活函数</strong>（Activation Function)神经网络中将输入信号的总和转化为输出信号的的函数。其作用在于如何来激活输入信号的总和。<br>It converts the sum of the input signal to the output signal. Its role is to determine how to activate the sum of input signals.The activation function of neural network must use nonlinear function.</p>
+                <h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>This passage is written on the purpose of introducing the function of the FYP application.</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
+<p>The App mainly includes four functions,which are :Using <strong>Traditional Computer Vision Method</strong> to analyze wound image,Using <strong>Deep Learning Method</strong> to segment the wound region from original image,Using <strong>Kivy Framework</strong> to design the UI interface.And some tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</p>
 </blockquote>
-<a id="more"></a>
-
-<hr>
-<h2 id="几种常见的激活函数以及Python实现"><a href="#几种常见的激活函数以及Python实现" class="headerlink" title="几种常见的激活函数以及Python实现"></a>几种常见的激活函数以及Python实现</h2><p>以下主要简要介绍几种常见的激活函数以及python实现</p>
-<h3 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h3><p>Sigmoid 函数的平滑性对神经网络的学习具有重要意义<br>神经网络中常用的一个激活函数为Sigmoid 函数，其数学表达式为：<br>$$    Sigmoid(x) = \dfrac{1}{1+e^{-x}} $$<br>其Python实现方法以及图示绘制为：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> mpl_toolkits<span class="token punctuation">.</span>axisartist <span class="token keyword">as</span> axisartist
-<span class="token keyword">import</span> matplotlib
-
-
-<span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    
-    
-<span class="token keyword">def</span> <span class="token function">plot_sigmoid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5.0</span><span class="token punctuation">,</span> <span class="token number">5.0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
-    y <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1.1</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Sigmoid Function'</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># plt.xlabel('X Axis')</span>
-    <span class="token comment" spellcheck="true"># plt.ylabel('Y Axis')</span>
-    <span class="token comment" spellcheck="true"># plt.tight_layout()</span>
-    ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'right'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_color<span class="token punctuation">(</span><span class="token string">'none'</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'top'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_color<span class="token punctuation">(</span><span class="token string">'none'</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'bottom'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_position<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'left'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_position<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>xaxis<span class="token punctuation">.</span>set_ticks_position<span class="token punctuation">(</span><span class="token string">'bottom'</span><span class="token punctuation">)</span>
-    ax<span class="token punctuation">.</span>yaxis<span class="token punctuation">.</span>set_major_locator<span class="token punctuation">(</span>matplotlib<span class="token punctuation">.</span>ticker<span class="token punctuation">.</span>MultipleLocator<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"sigmoid.png"</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    plot_sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其结果展示如下：<br><img src="/posts/a2d2/Sigmoid.png" alt="Outcome for Sigmoid Function"></p>
-<hr>
-<h3 id="ReLU-Function"><a href="#ReLU-Function" class="headerlink" title="ReLU Function"></a>ReLU Function</h3><p><strong>ReLU 函数</strong>的全程为 Rectified Linear Unit，即意为<em>校正线性单元</em>。</p>
-<p>其函数特征为：ReLU 函数在输入大于0时，直接输出该值；在输入小于0时，输出0，其python实现可以通过以下两种方式：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">relu</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">relu</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<blockquote>
-<p>补充：<strong>shape函数</strong>的功能是读取矩阵的长度，比如shape[0]就是读取矩阵第一维度的长度,相当于行数。</p>
+<p>The following content will introduce the individual function of the main pages.</p>
+<h2 id="2-Login-Page"><a href="#2-Login-Page" class="headerlink" title="2. Login Page"></a>2. Login Page</h2><blockquote>
+<p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
 </blockquote>
-<hr>
-<h3 id="Tanh-Function"><a href="#Tanh-Function" class="headerlink" title="Tanh Function"></a>Tanh Function</h3><p>Tanh Function 的数学表达式为：<br>$$<br>\begin{align}<br>        Tanh(x) &amp;= \dfrac{e^{x}-e^{-x}}{e^{x}+e^{-x}}<br>\end{align}<br>$$</p>
-<p>其Python 的实现具体实现为：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">tanh</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">-</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>此函数的绘制思路与Sigmoid 函数基本相似，但此处本文采用区别于前的方法进行绘制：</p>
-<pre class="line-numbers language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
-y <span class="token operator">=</span> tanh<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">1.5</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Tanh Function'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'X Axis'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Y Axis'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#plt.tight_layout()</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>此种方法绘制的图线<em>没有坐标轴</em>因此可能缺乏严谨性，可以加以区分，其绘制的结果如下图所示：<br><img src="/posts/a2d2/Tanh.png" alt="Outcome for Tanh Function"></p>
-<hr>
-<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数(阶跃函数也为非线性函数)</strong></p>
-<blockquote>
-<p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em></p>
+<h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
+<p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
 </blockquote>
-<p>　　使用线性函数的问题在于，不管如何加深层数，总是存在与之结构等效的“无隐藏层的神经网络。比如下面这个简单的例子（来自《鱼书》）：<br>　　我们将线性函数$$h(x) = cx$$作为激活函数，将$$y(x) = h(h(h(x)))$$的运算简单对应为3层神经网络（实际的神经网络更加复杂）。那么这个运算会进行$$y(x) = c\times c\times c\times x $$的乘法运算，但是同样的运算可以由$$y = ax$$where: $$a=c^{3}$$这样的一次乘法运算表示。即表明，此次乘法运算可以由没有隐藏层到的神经网络表示，因而<strong>无法发挥多层网络</strong>的优势。<br>　　因此，为发挥叠加层所带来的优势，<strong>激活函数必须使用非线性函数</strong>。</p>
+<p>The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.</p>
 
                 
             </div>
@@ -506,7 +441,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://oliverfan.top/posts/a2d2/">http://oliverfan.top/posts/a2d2/</a>
+                    <a href="http://oliverfan.top/posts/2adb/">http://oliverfan.top/posts/2adb/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,12 +479,12 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/Kivy/">
+                                    <span class="chip bg-color">Kivy</span>
                                 </a>
                             
-                                <a href="/tags/Deep-Learning/">
-                                    <span class="chip bg-color">Deep Learning</span>
+                                <a href="/tags/FYP/">
+                                    <span class="chip bg-color">FYP</span>
                                 </a>
                             
                         </div>
@@ -861,9 +796,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/posts/2adb/">
                     <div class="card-image">
@@ -881,9 +817,9 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -896,6 +832,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -918,32 +855,32 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/40f8/">
+                <a href="/posts/a2d2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Python PDF Generator">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Deep Learning-Activation Function">
                         
-                        <span class="card-title">Python PDF Generator</span>
+                        <span class="card-title">Deep Learning-Activation Function</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. Introduction
-I met this question since the demand for the generation of digital records for the patients based on the
+                            
+激活函数（Activation Function)神经网络中将输入信号的总和转化为输出信号的的函数。其作用在于如何来激活输入信号的总和。It converts the sum of the input signal to the outp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python-Study/" class="post-category">
-                                    Python Study
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                             
                             
@@ -957,8 +894,8 @@ I met this question since the demand for the generation of digital records for t
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Tools/">
-                        <span class="chip bg-color">Tools</span>
+                    <a href="/tags/Deep-Learning/">
+                        <span class="chip bg-color">Deep Learning</span>
                     </a>
                     
                 </div>
@@ -1126,13 +1063,6 @@ I met this question since the demand for the generation of digital records for t
 
 </main>
 
-
-<script src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

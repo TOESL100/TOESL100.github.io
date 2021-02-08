@@ -49,18 +49,27 @@
   <entry>
     <title>FYP Application Introduction</title>
     <url>/posts/2adb/</url>
-    <content><![CDATA[<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>This passage is written on the purpose of introducing the function of the FYP application.</p>
+    <content><![CDATA[<h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by NUS.</p>
+<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>This passage is written on the purpose of introducing the function of the FYP application.</p>
 <h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
-<p>The App mainly includes four functions,which are :Using <strong>Traditional Computer Vision Method</strong> to analyze wound image,Using <strong>Deep Learning Method</strong> to segment the wound region from original image,Using <strong>Kivy Framework</strong> to design the UI interface.And some tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</p>
+<p>The App mainly includes four functions,which are :</p>
 </blockquote>
+<ul>
+<li><strong>CV</strong> - Using <strong>Traditional Computer Vision Method</strong> to analyze wound image,</li>
+<li><strong>DL</strong> - Using <strong>Deep Learning Method</strong> to segment the wound region from original image,</li>
+<li><strong>UI</strong> - Using <strong>Kivy Framework</strong> to design the UI interface.</li>
+<li><strong>More</strong> - And some other tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</li>
+</ul>
 <p>The following content will introduce the individual function of the main pages.</p>
 <h2 id="2-Login-Page"><a href="#2-Login-Page" class="headerlink" title="2. Login Page"></a>2. Login Page</h2><blockquote>
 <p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
 </blockquote>
+<p>The User are supposed to type the username and corresponding password to log in the app,which the UI interface is illustrated as below:</p>
+<p><img src="/posts/2adb/login.png" alt="UI Interface for Login Page"></p>
 <h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
 <p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
 </blockquote>
-<p>The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.</p>
+<p>The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.<br><img src="/posts/2adb/add.png" alt="UI Interface for Adding Patient Page"></p>
 ]]></content>
       <categories>
         <category>FYP Record</category>

@@ -475,11 +475,11 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>此种方法绘制的图线<em>没有坐标轴</em>因此可能缺乏严谨性，可以加以区分，其绘制的结果如下图所示：<br><img src="/posts/a2d2/Tanh.png" alt="Outcome for Tanh Function"></p>
 <hr>
-<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数(阶跃函数也为非线性函数)</strong></p>
+<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数,阶跃函数也为非线性函数</strong></p>
 <blockquote>
-<p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em></p>
+<p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em>  </p>
 </blockquote>
-<p>　　使用线性函数的问题在于，不管如何加深层数，总是存在与之结构等效的“无隐藏层的神经网络。比如下面这个简单的例子（来自《鱼书》）：<br>　　我们将线性函数$$h(x) = cx$$作为激活函数，将$$y(x) = h(h(h(x)))$$的运算简单对应为3层神经网络（实际的神经网络更加复杂）。那么这个运算会进行$$y(x) = c\times c\times c\times x $$的乘法运算，但是同样的运算可以由$$y = ax$$where: $$a=c^{3}$$这样的一次乘法运算表示。即表明，此次乘法运算可以由没有隐藏层到的神经网络表示，因而<strong>无法发挥多层网络</strong>的优势。<br>　　因此，为发挥叠加层所带来的优势，<strong>激活函数必须使用非线性函数</strong>。</p>
+<p>　　使用线性函数的问题在于，不管如何加深层数，总是存在与之结构等效的“无隐藏层的神经网络。比如下面这个简单的例子（来自《鱼书》）：<br>　　我们将线性函数$h(x) = cx$作为激活函数，将$y(x) = h(h(h(x)))$的运算简单对应为3层神经网络（实际的神经网络更加复杂）。那么这个运算会进行$y(x) = c\times c\times c\times x $的乘法运算，但是同样的运算可以由$y = ax$[where: $a=c^{3}$]这样的一次乘法运算表示。即表明，此次乘法运算可以由没有隐藏层到的神经网络表示，因而<strong>无法发挥多层网络</strong>的优势。<br>　　因此，为发挥叠加层所带来的优势，<strong>激活函数必须使用非线性函数</strong>。</p>
 
                 
             </div>
@@ -1127,7 +1127,7 @@ I met this question since the demand for the generation of digital records for t
 </main>
 
 
-<script src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}

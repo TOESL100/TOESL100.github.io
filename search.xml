@@ -49,8 +49,8 @@
   <entry>
     <title>FYP Application Introduction</title>
     <url>/posts/2adb/</url>
-    <content><![CDATA[<h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by NUS.</p>
-<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>This passage is written on the purpose of introducing the function of the FYP application.</p>
+    <content><![CDATA[<h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>　　The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>　　Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by NUS.</p>
+<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>　　This passage is written on the purpose of introducing the function of the FYP application.</p>
 <h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
 <p>The App mainly includes four functions,which are :</p>
 </blockquote>
@@ -64,12 +64,34 @@
 <h2 id="2-Login-Page"><a href="#2-Login-Page" class="headerlink" title="2. Login Page"></a>2. Login Page</h2><blockquote>
 <p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
 </blockquote>
-<p>The User are supposed to type the username and corresponding password to log in the app,which the UI interface is illustrated as below:</p>
+<p>　　The User are supposed to type the username and corresponding password to log in the app,the eyes on the right can be clicked to hide the password and the UI interface is illustrated as below:</p>
 <p><img src="/posts/2adb/login.png" alt="UI Interface for Login Page"></p>
 <h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
 <p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
 </blockquote>
-<p>The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.<br><img src="/posts/2adb/add.png" alt="UI Interface for Adding Patient Page"></p>
+<p>　　The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.<br><img src="/posts/2adb/add.png" alt="UI Interface for Adding Patient Page"></p>
+<p>　　The required information are:Patient’s Name,Age,Gender,Creation Date.The creation date can be choosed by using datepicker,where you should <strong>double click</strong> the iconbutton.<br><img src="/posts/2adb/datepicker.gif" alt="Double Click To Activate DatePicker"></p>
+<p>　　Meanwhile,this page can be skipped directly and jump to <strong>Upload Page</strong> or <strong>Home</strong>.<br>　　At present stage,the data is collected in database,I am considering use <a href="https://console.firebase.google.com/">Firebase</a> to replace it in further work,as firebase can loose the burden on the local storage.</p>
+<h2 id="4-Home-Page"><a href="#4-Home-Page" class="headerlink" title="4. Home Page"></a>4. Home Page</h2><blockquote>
+<p>You can get to the home page if you have finished creating patient information.And the tabhint is used to guide the user for activating navigation drawer.Meanwhile,the chips on the bottom of the home shows the related knowledge and skills.</p>
+</blockquote>
+<p>　　The interface of the home page is showed as follow:<br><img src="/posts/2adb/home.png" alt="UI Interface for Home Page"><br>　　To jump to the corresponding tab, you can use the navigation drawer. In the figure below, the unique page implementation is shown.<br><img src="/posts/2adb/navigation.png" alt="Navigation Drawer"></p>
+<h2 id="5-Upload-Wound-Image-amp-Analyze"><a href="#5-Upload-Wound-Image-amp-Analyze" class="headerlink" title="5. Upload Wound Image &amp; Analyze"></a>5. Upload Wound Image &amp; Analyze</h2><blockquote>
+<p>This is one of the main tasks of the application,which contains the wound image upload.The core idea is to process and analyze images based on OpenCv through traditional computer vision methods, and then obtain the contour and specific characteristics of the wound.</p>
+</blockquote>
+<p>More specifically, it mainly includes three functions: <strong>taking pictures by camera</strong>, <strong>uploading local pictures /taking pictures &amp; wound pictures to the database</strong>, <strong>analyzing and processing wound pictures</strong>.</p>
+<h3 id="5-1-Camera"><a href="#5-1-Camera" class="headerlink" title="5.1 Camera"></a>5.1 Camera</h3><p>　　The cmaera function can be achieved by the camera on mobile phone,which can store the picture taken as the format <code>&quot;%Y%m%d%H%M%S.png&quot;</code>,at present the picture is stored in local address,I am considering using cloud-database as well.</p>
+<h3 id="5-2-Upload-Wound-Image"><a href="#5-2-Upload-Wound-Image" class="headerlink" title="5.2 Upload Wound Image"></a>5.2 Upload Wound Image</h3><p>　　Professional doctors will need to upload wound pictures to the database,thus this function aims to pop up a window to choose file from album in mobilephone.</p>
+<h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application.This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
+<blockquote>
+<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#102;&#104;&#108;&#105;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#102;&#104;&#108;&#105;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a>).Please refer to the <a href="http://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
+　　</p>
+</blockquote>
+<p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>
+<h2 id="6-Wound-Image-Segmentation–Deep-Learning"><a href="#6-Wound-Image-Segmentation–Deep-Learning" class="headerlink" title="6. Wound Image Segmentation–Deep Learning"></a>6. Wound Image Segmentation–Deep Learning</h2><h2 id="7-Weather"><a href="#7-Weather" class="headerlink" title="7. Weather"></a>7. Weather</h2><blockquote>
+<p> The original intention of the weather module is to be used as a small life tool to provide doctors with timely weather information to deal with possible weather conditions.</p>
+</blockquote>
+<p>　　The temperature of the displayed area can be selected by yourself (the default is Singapore), and the automatic positioning function is to be developed<br><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"></p>
 ]]></content>
       <categories>
         <category>FYP Record</category>
@@ -154,11 +176,11 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>此种方法绘制的图线<em>没有坐标轴</em>因此可能缺乏严谨性，可以加以区分，其绘制的结果如下图所示：<br><img src="/posts/a2d2/Tanh.png" alt="Outcome for Tanh Function"></p>
 <hr>
-<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数(阶跃函数也为非线性函数)</strong></p>
+<h2 id="线性函数与非线性函数"><a href="#线性函数与非线性函数" class="headerlink" title="线性函数与非线性函数"></a>线性函数与非线性函数</h2><p><strong>这里需要提到，Sigmoid 函数为非线性函数,阶跃函数也为非线性函数</strong></p>
 <blockquote>
-<p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em></p>
+<p><em>尤其需要注意的是：激活函数不能使用线性函数，如果使用线性函数，加深神经网络的层数就不具有意义。</em>  </p>
 </blockquote>
-<p>　　使用线性函数的问题在于，不管如何加深层数，总是存在与之结构等效的“无隐藏层的神经网络。比如下面这个简单的例子（来自《鱼书》）：<br>　　我们将线性函数$$h(x) = cx$$作为激活函数，将$$y(x) = h(h(h(x)))$$的运算简单对应为3层神经网络（实际的神经网络更加复杂）。那么这个运算会进行$$y(x) = c\times c\times c\times x $$的乘法运算，但是同样的运算可以由$$y = ax$$where: $$a=c^{3}$$这样的一次乘法运算表示。即表明，此次乘法运算可以由没有隐藏层到的神经网络表示，因而<strong>无法发挥多层网络</strong>的优势。<br>　　因此，为发挥叠加层所带来的优势，<strong>激活函数必须使用非线性函数</strong>。</p>
+<p>　　使用线性函数的问题在于，不管如何加深层数，总是存在与之结构等效的“无隐藏层的神经网络。比如下面这个简单的例子（来自《鱼书》）：<br>　　我们将线性函数$h(x) = cx$作为激活函数，将$y(x) = h(h(h(x)))$的运算简单对应为3层神经网络（实际的神经网络更加复杂）。那么这个运算会进行$y(x) = c\times c\times c\times x $的乘法运算，但是同样的运算可以由$y = ax$[where: $a=c^{3}$]这样的一次乘法运算表示。即表明，此次乘法运算可以由没有隐藏层到的神经网络表示，因而<strong>无法发挥多层网络</strong>的优势。<br>　　因此，为发挥叠加层所带来的优势，<strong>激活函数必须使用非线性函数</strong>。</p>
 ]]></content>
       <categories>
         <category>Deep Learning</category>

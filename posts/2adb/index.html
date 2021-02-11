@@ -376,14 +376,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    787
+                    860
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    5 Min
                 </div>
                 
 
@@ -403,7 +403,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>　　The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>　　Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by NUS.</p>
+                <h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>　　The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>　　Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by <a target="_blank" rel="noopener" href="https://www.nus.edu.sg/">NUS</a>.</p>
 <h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>　　This passage is written on the purpose of introducing the function of the FYP application.</p>
 <h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
 <p>The App mainly includes four functions,which are :</p>
@@ -434,18 +434,24 @@
 <p>This is one of the main tasks of the application,which contains the wound image upload.The core idea is to process and analyze images based on OpenCv through traditional computer vision methods, and then obtain the contour and specific characteristics of the wound.</p>
 </blockquote>
 <p>More specifically, it mainly includes three functions: <strong>taking pictures by camera</strong>, <strong>uploading local pictures /taking pictures &amp; wound pictures to the database</strong>, <strong>analyzing and processing wound pictures</strong>.</p>
-<h3 id="5-1-Camera"><a href="#5-1-Camera" class="headerlink" title="5.1 Camera"></a>5.1 Camera</h3><p>　　The cmaera function can be achieved by the camera on mobile phone,which can store the picture taken as the format <code>&quot;%Y%m%d%H%M%S.png&quot;</code>,at present the picture is stored in local address,I am considering using cloud-database as well.</p>
+<h3 id="5-1-Camera"><a href="#5-1-Camera" class="headerlink" title="5.1 Camera"></a>5.1 Camera</h3><p>　　The camera function can be achieved by the camera on mobile phone,which can store the picture taken as the format <code>&quot;%Y%m%d%H%M%S.png&quot;</code>,at present the picture is stored in local address,I am considering using cloud-database as well.</p>
 <h3 id="5-2-Upload-Wound-Image"><a href="#5-2-Upload-Wound-Image" class="headerlink" title="5.2 Upload Wound Image"></a>5.2 Upload Wound Image</h3><p>　　Professional doctors will need to upload wound pictures to the database,thus this function aims to pop up a window to choose file from album in mobilephone.</p>
 <h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application.This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
 <blockquote>
-<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#102;&#104;&#108;&#105;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#102;&#104;&#108;&#105;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a>).Please refer to the <a href="http://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
+<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#x6c;&#105;&#x65;&#x6c;&#x74;&#115;&#56;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x66;&#104;&#x6c;&#105;&#x65;&#x6c;&#x74;&#115;&#56;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;</a>).Please refer to the <a href="http://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
 　　</p>
 </blockquote>
 <p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>
 <h2 id="6-Wound-Image-Segmentation–Deep-Learning"><a href="#6-Wound-Image-Segmentation–Deep-Learning" class="headerlink" title="6. Wound Image Segmentation–Deep Learning"></a>6. Wound Image Segmentation–Deep Learning</h2><h2 id="7-Weather"><a href="#7-Weather" class="headerlink" title="7. Weather"></a>7. Weather</h2><blockquote>
 <p> The original intention of the weather module is to be used as a small life tool to provide doctors with timely weather information to deal with possible weather conditions.</p>
 </blockquote>
-<p>　　The temperature of the displayed area can be selected by yourself (the default is Singapore), and the automatic positioning function is to be developed<br><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"></p>
+<p>　　The temperature of the displayed area can be selected by yourself ,the default is (Singapore), and the automatic positioning function is to be developed.</p>
+<blockquote>
+<p>Note:The Weather funtion is supported by <a target="_blank" rel="noopener" href="https://openweathermap.org/">OpenWeatherMap API</a></p>
+</blockquote>
+<p><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"><br>　　Meanwhile,the button on the toolbar have the ability to back to home or refresh the widget.</p>
+<h2 id="8-Personal-Setting"><a href="#8-Personal-Setting" class="headerlink" title="8. Personal Setting"></a>8. Personal Setting</h2><p>　　The personal setting page now contains name-chage-box,where the user can change the user name and avatar.Consider adding theme replacement function later.</p>
+<h2 id="9-Help-Page"><a href="#9-Help-Page" class="headerlink" title="9. Help Page"></a>9. Help Page</h2><p>　　The help page contains the chatbot,which has the ability to answer questions for the users.</p>
 
                 
             </div>

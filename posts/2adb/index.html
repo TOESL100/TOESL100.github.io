@@ -376,14 +376,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    938
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    9 Min
                 </div>
                 
 
@@ -415,11 +415,18 @@
 <li><strong>More</strong> - And some other tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</li>
 </ul>
 <p>The following content will introduce the individual function of the main pages.</p>
-<h2 id="2-Login-Page"><a href="#2-Login-Page" class="headerlink" title="2. Login Page"></a>2. Login Page</h2><blockquote>
+<h2 id="2-Login-Verification-Updated-at-2020-02-19"><a href="#2-Login-Verification-Updated-at-2020-02-19" class="headerlink" title="2. Login Verification: Updated at 2020/02/19"></a>2. Login Verification: Updated at 2020/02/19</h2><p>(Version 0.1.0)</p>
+<blockquote>
 <p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
 </blockquote>
 <p>　　The User are supposed to type the username and corresponding password to log in the app,the eyes on the right can be clicked to hide the password and the UI interface is illustrated as below:</p>
 <p><img src="/posts/2adb/login.png" alt="UI Interface for Login Page"></p>
+<h3 id="Login-Page-Updated"><a href="#Login-Page-Updated" class="headerlink" title="Login Page -(Updated)"></a>Login Page -(Updated)</h3><ul>
+<li><strong>Integration &amp; Optimization of Functions such as Style Replacement</strong> - Add the original application style setting function to the setting page.</li>
+<li><strong>Optimized Realization of Login Function</strong> - The original login interface has only been designed for the interface. This update adds the back-end database to realize the login function. At the same time, consider using third-party logins such as Github and Facebook to simplify the database structure and load. The existing interface is shown in the figure below. The user icon in the upper left corner can be used to create a new user and store it. At the same time, this page can jump to the password recovery interface to provide password recovery services for registered users.<br><img src="/posts/2adb/login_update.png" alt="UI Interface for Login Page--Version 0.1.0"></li>
+<li><strong>Add Verification or Error Prompt</strong> - Added prompts of incorrect types, including incorrect password, input user does not exist, etc. Set the login button to Progress Button to optimize the interface design and user experience.The detailed demo is showed as below:<br><img src="/posts/2adb/login_update.gif" alt="Verification or Error Prompt--Version 0.1.0"><h3 id="User-Register-Page-Updated"><a href="#User-Register-Page-Updated" class="headerlink" title="User Register Page -(Updated)"></a>User Register Page -(Updated)</h3>　　The addition of the user registration function, this function can create new user personal information based on the user name and the email address that the user fills in. After the creation is completed, you can return to the login page to log in.And the UI interface is illustrated as the figure below:<br><img src="/posts/2adb/register.png" alt="UI Interface for Register Page"></li>
+</ul>
+<h3 id="Password-Retrieve-Page-Updated"><a href="#Password-Retrieve-Page-Updated" class="headerlink" title="Password Retrieve Page -(Updated)"></a>Password Retrieve Page -(Updated)</h3><p>　　This function is designed to take into account the possibility of users forgetting their passwords, enter the email used during registration to retrieve and reset the password, and then log in. The design of its interface is shown in the figure below.<br><img src="/posts/2adb/retrieve.png" alt="UI Interface for Retrieve Page"></p>
 <h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
 <p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
 </blockquote>
@@ -438,10 +445,11 @@
 <h3 id="5-2-Upload-Wound-Image"><a href="#5-2-Upload-Wound-Image" class="headerlink" title="5.2 Upload Wound Image"></a>5.2 Upload Wound Image</h3><p>　　Professional doctors will need to upload wound pictures to the database,thus this function aims to pop up a window to choose file from album in mobilephone.</p>
 <h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application.This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
 <blockquote>
-<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#108;&#105;&#101;&#x6c;&#x74;&#115;&#x38;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#x66;&#104;&#108;&#105;&#101;&#x6c;&#x74;&#115;&#x38;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a>).Please refer to the <a href="http://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
+<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#x6c;&#105;&#101;&#108;&#116;&#115;&#x38;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#104;&#x6c;&#105;&#101;&#108;&#116;&#115;&#x38;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>).Please refer to the <a href="http://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
 　　</p>
 </blockquote>
 <p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>
+<h4 id="Updated-at-2020-02-15"><a href="#Updated-at-2020-02-15" class="headerlink" title="(Updated) at 2020/02/15"></a>(Updated) at 2020/02/15</h4><p>　　Optimize the file management pop-up window, beautify its appearance and increase its use functions, the nature of its asynchronous processing and wound image analysis has not changed.<br><img src="/posts/2adb/file_manager.png" alt="Optimized File Manager">    </p>
 <h2 id="6-Wound-Image-Segmentation–Deep-Learning"><a href="#6-Wound-Image-Segmentation–Deep-Learning" class="headerlink" title="6. Wound Image Segmentation–Deep Learning"></a>6. Wound Image Segmentation–Deep Learning</h2><h2 id="7-Weather"><a href="#7-Weather" class="headerlink" title="7. Weather"></a>7. Weather</h2><blockquote>
 <p> The original intention of the weather module is to be used as a small life tool to provide doctors with timely weather information to deal with possible weather conditions.</p>
 </blockquote>
@@ -450,7 +458,15 @@
 <p>Note:The Weather funtion is supported by <a target="_blank" rel="noopener" href="https://openweathermap.org/">OpenWeatherMap API</a></p>
 </blockquote>
 <p><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"><br>　　Meanwhile,the button on the toolbar have the ability to back to home or refresh the widget.</p>
-<h2 id="8-Personal-Setting"><a href="#8-Personal-Setting" class="headerlink" title="8. Personal Setting"></a>8. Personal Setting</h2><p>　　The personal setting page now contains name-chage-box,where the user can change the user name and avatar.Consider adding theme replacement function later.</p>
+<h2 id="8-Personal-Setting-Updated-at-2020-02-21"><a href="#8-Personal-Setting-Updated-at-2020-02-21" class="headerlink" title="8. Personal Setting: Updated at 2020/02/21"></a>8. Personal Setting: Updated at 2020/02/21</h2><blockquote>
+<p>The personal setting page now contains name-chage-box,where the user can change the user name and avatar.Consider adding theme replacement function later.The the UI interface is illustrated as below:</p>
+</blockquote>
+<p><img src="/posts/2adb/setting.png" alt="UI Interface for Personal Setting Page"></p>
+<h3 id="8-1-Avatar-Change-Updated"><a href="#8-1-Avatar-Change-Updated" class="headerlink" title="8.1 Avatar Change -(Updated)"></a>8.1 Avatar Change -(Updated)</h3><p>　　The user can change the user avatar with clicking on the current avatar,which will activate the avatar list,the user can randomly choose one by clicking the image in the image list.</p>
+<h3 id="8-2-Dark-Mode-Updated"><a href="#8-2-Dark-Mode-Updated" class="headerlink" title="8.2 Dark Mode -(Updated)"></a>8.2 Dark Mode -(Updated)</h3><p>　　The dark mode is set to meet the needs of users in different environments, and the mode can be switched through the switch.</p>
+<h3 id="8-3-Password-Visibility-Updated"><a href="#8-3-Password-Visibility-Updated" class="headerlink" title="8.3 Password Visibility -(Updated)"></a>8.3 Password Visibility -(Updated)</h3><p>　　This setting option can be used to set the visibility of the password, currently this setting is mainly for the login verification interface.</p>
+<h3 id="8-4-Password-Reset-Updated"><a href="#8-4-Password-Reset-Updated" class="headerlink" title="8.4 Password Reset -(Updated)"></a>8.4 Password Reset -(Updated)</h3><p>　　This function provides the option of password reset for users who have successfully logged in. When the old password is inconsistent with the original password, the new password is stored in the corresponding user information in the database. This function also considers using <strong>FireBase</strong> as storage in subsequent iterations database.For specific operations, please follow the pop-up prompts and confirm.<br><img src="/posts/2adb/password_reset.png" alt="Password Reset Dialog"></p>
+<h3 id="8-5-Logout-Current-Account-Updated"><a href="#8-5-Logout-Current-Account-Updated" class="headerlink" title="8.5 Logout Current Account -(Updated)"></a>8.5 Logout Current Account -(Updated)</h3><p>　　The logout function will log out of the current login account and jump to the login page. This function provides the application with the function of independent use of multiple accounts and stores user information separately.</p>
 <h2 id="9-Help-Page"><a href="#9-Help-Page" class="headerlink" title="9. Help Page"></a>9. Help Page</h2><p>　　The help page contains the chatbot,which has the ability to answer questions for the users.The chatbot can answer the questions like:</p>
 <ul>
 <li><strong>How are you</strong></li>

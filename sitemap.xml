@@ -102,13 +102,6 @@
   </url>
   
   <url>
-    <loc>http://oliverfan.top/tags/Tools/</loc>
-    <lastmod>2021-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://oliverfan.top/tags/Introduction/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
@@ -116,7 +109,7 @@
   </url>
   
   <url>
-    <loc>http://oliverfan.top/tags/Kivy/</loc>
+    <loc>http://oliverfan.top/tags/Tools/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -124,6 +117,13 @@
   
   <url>
     <loc>http://oliverfan.top/tags/FYP/</loc>
+    <lastmod>2021-03-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oliverfan.top/tags/Kivy/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -146,14 +146,14 @@
   </url>
   
   <url>
-    <loc>http://oliverfan.top/categories/Kivy-Study/</loc>
+    <loc>http://oliverfan.top/categories/FYP-Record/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://oliverfan.top/categories/FYP-Record/</loc>
+    <loc>http://oliverfan.top/categories/Kivy-Study/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

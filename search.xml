@@ -53,13 +53,13 @@
 <h3 id="1-2-Brief-Introduction-of-the-Streamlit"><a href="#1-2-Brief-Introduction-of-the-Streamlit" class="headerlink" title="1.2 Brief Introduction of the Streamlit"></a>1.2 Brief Introduction of the Streamlit</h3><p>　　Streamlit turns data scripts into shareable web apps in minutes.Adding a widget is the same as declaring a variable. No need to write a backend, define routes, handle HTTP requests, connect a frontend, write HTML, CSS, JavaScript, …<br>　　And the installation is simple that you can use the code as follow to install the package:</p>
 <pre class="line-numbers language-python"><code class="language-python">     pip install streamlit <span class="token operator">-</span>i https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="2-Segmentation-Based-on-OpenCV"><a href="#2-Segmentation-Based-on-OpenCV" class="headerlink" title="2.Segmentation Based on OpenCV"></a>2.Segmentation Based on OpenCV</h2><p>　　In order to analyze the wound image,the following steps are necessary,which is demonstrated as follow:</p>
+<h2 id="2-Segmentation-Based-on-OpenCV"><a href="#2-Segmentation-Based-on-OpenCV" class="headerlink" title="2.Segmentation Based on OpenCV"></a>2.Segmentation Based on OpenCV</h2><p>　　At the beginning,dragging or uploading the wound image via local address or photo album.In order to analyze the wound image,the following steps are necessary,which is demonstrated as follow:</p>
 <ul>
 <li><strong>Step 1</strong> - Calibrate image. The calibration of the image can be realized by dragging the corners of the marker over two points of known distance in the horizontal axis and enter the distance.</li>
 <li><strong>Step 2</strong> - Adjust the bounding box to select the wound(<em>Region Of Interest</em>).</li>
 <li><strong>Step 3</strong> - Adjust the Threshold and Ratio sliders to get the ideal segmentation.</li>
 </ul>
-<h3 id="2-1-The-UI-Interface-of-First-Method"><a href="#2-1-The-UI-Interface-of-First-Method" class="headerlink" title="2.1 The UI Interface of First Method"></a>2.1 The UI Interface of First Method</h3><blockquote>
+<h3 id="2-1-The-UI-Interface-of-OpenCV-Method"><a href="#2-1-The-UI-Interface-of-OpenCV-Method" class="headerlink" title="2.1 The UI Interface of OpenCV Method"></a>2.1 The UI Interface of OpenCV Method</h3><blockquote>
 <p>The UI interface must contain the image browser,slider,and the illustration of image.</p>
 </blockquote>
 <h4 id="2-1-1-The-Realization-of-Image-Uploader"><a href="#2-1-1-The-Realization-of-Image-Uploader" class="headerlink" title="2.1.1 The Realization of Image Uploader"></a>2.1.1 The Realization of Image Uploader</h4><p>The uploader component is simple to use </p>
@@ -74,6 +74,14 @@
 <li><strong>accept_multiple_files (bool)</strong> – If True, allows the user to upload multiple files at the same time, in which case the return value will be a list of files. Default: False</li>
 <li><strong>key (<em>str</em>)</strong> – An optional string to use as the unique key for the widget. If this is omitted, a key will be generated for the widget based on its content. Multiple widgets of the same type may not share the same key.</li>
 </ul>
+<h4 id="2-1-1-The-Realization-of-Threshold-Adjust"><a href="#2-1-1-The-Realization-of-Threshold-Adjust" class="headerlink" title="2.1.1 The Realization of Threshold Adjust"></a>2.1.1 The Realization of Threshold Adjust</h4><p>The ROI Selection and Threshold Adjusting is using streamlit-cropper and streamlit slider,the installation of the streamlit-cropper and the interpretation of the streamlit slider is demonstrated as follow:</p>
+<pre class="line-numbers language-python"><code class="language-python">     pip install streamlit<span class="token operator">-</span>cropper
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/posts/672a/streamlit_cropper_demo.gif" alt="Demo of Image Cropper"></p>
+<pre class="line-numbers language-python"><code class="language-python">streamlit<span class="token punctuation">.</span>slider<span class="token punctuation">(</span>label<span class="token punctuation">,</span> min_value<span class="token operator">=</span>None<span class="token punctuation">,</span> max_value<span class="token operator">=</span>None<span class="token punctuation">,</span> value<span class="token operator">=</span>None<span class="token punctuation">,</span> step<span class="token operator">=</span>None<span class="token punctuation">,</span> format<span class="token operator">=</span>None<span class="token punctuation">,</span> key<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>The detailed usage please refer to the <a href="https://docs.streamlit.io/en/latest/api.html?highlight=slider#streamlit.slider">official documentation</a></p>
+<h3 id="2-2-The-Implementation-of-Wound-Segmentation"><a href="#2-2-The-Implementation-of-Wound-Segmentation" class="headerlink" title="2.2 The Implementation of Wound Segmentation"></a>2.2 The Implementation of Wound Segmentation</h3><p>The input image is processed based on GaussianBlur and Edge detection(<em>Canny Edge</em>)<br>Resize the input image into the shape of <code>(256,256)</code>,then turn the format of input image into RGB,Gray and LAB.<br>Set the threshold to the value which adjusted by the slider mentioned before,and then the result will be illustrated below the original image.</p>
 ]]></content>
       <categories>
         <category>FYP Record</category>

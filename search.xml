@@ -37,7 +37,7 @@
 <h2 id="Feedback-amp-Bug-Report"><a href="#Feedback-amp-Bug-Report" class="headerlink" title="Feedback &amp; Bug Report"></a>Feedback &amp; Bug Report</h2><p>You can leave a message via Github or Email</p>
 <ul>
 <li>Github: <a href="https://github.com/TOESL100">https://github.com/TOESL100</a></li>
-<li>Email: <a href="mailto:&#x66;&#104;&#108;&#105;&#101;&#108;&#x74;&#115;&#x38;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x66;&#104;&#108;&#105;&#101;&#108;&#x74;&#115;&#x38;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a></li>
+<li>Email: <a href="mailto:&#102;&#x68;&#108;&#x69;&#x65;&#108;&#x74;&#115;&#56;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#102;&#x68;&#108;&#x69;&#x65;&#108;&#x74;&#115;&#56;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></li>
 </ul>
 <hr>
 <p>Thank you for reading this manual. Looking for your advice!</p>
@@ -168,7 +168,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
 <blockquote>
-<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#108;&#x69;&#101;&#108;&#116;&#115;&#x38;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#104;&#108;&#x69;&#101;&#108;&#116;&#115;&#x38;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>).Please refer to the <a href="https://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
+<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#x6c;&#x69;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#104;&#x6c;&#x69;&#x65;&#x6c;&#116;&#115;&#56;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>).Please refer to the <a href="https://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
 　　</p>
 </blockquote>
 <p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>

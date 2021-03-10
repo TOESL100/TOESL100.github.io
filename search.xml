@@ -1,237 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>FanHaolin&#39;s Blog for FYP Study</title>
-    <url>/posts/4b7b/</url>
-    <content><![CDATA[<h1 id="Welcome-to-OliverFan’s-Blog"><a href="#Welcome-to-OliverFan’s-Blog" class="headerlink" title="Welcome to OliverFan’s Blog"></a>Welcome to OliverFan’s Blog</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
-<p>The aim of adding this blog is to demonstrate the learning process during the FYP,and also as a memo to record some important knowledge</p>
-</blockquote>
-<h3 id="Content-Introduction"><a href="#Content-Introduction" class="headerlink" title="Content Introduction"></a>Content Introduction</h3><table>
-<thead>
-<tr>
-<th align="left">Item</th>
-<th align="right">Usage</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Python</td>
-<td align="right">Programming Skill</td>
-</tr>
-<tr>
-<td align="left">Kivy</td>
-<td align="right">UI Interface</td>
-</tr>
-<tr>
-<td align="left">Deep Learning</td>
-<td align="right">Wound Segmentation</td>
-</tr>
-</tbody></table>
-<h3 id="Current-Content"><a href="#Current-Content" class="headerlink" title="Current Content"></a>Current Content</h3><ul>
-<li><input checked disabled type="checkbox"> Fundamental Python</li>
-<li><input checked disabled type="checkbox"> Kivy Framework</li>
-<li><input disabled type="checkbox"> Deep Learning</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong> Currently it is only basical introduced. </p>
-</blockquote>
-<h2 id="Feedback-amp-Bug-Report"><a href="#Feedback-amp-Bug-Report" class="headerlink" title="Feedback &amp; Bug Report"></a>Feedback &amp; Bug Report</h2><p>You can leave a message via Github or Email</p>
-<ul>
-<li>Github: <a href="https://github.com/TOESL100">https://github.com/TOESL100</a></li>
-<li>Email: <a href="mailto:&#102;&#x68;&#x6c;&#x69;&#101;&#x6c;&#x74;&#x73;&#56;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#x68;&#x6c;&#x69;&#101;&#x6c;&#x74;&#x73;&#56;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
-</ul>
-<hr>
-<p>Thank you for reading this manual. Looking for your advice!</p>
-]]></content>
-      <tags>
-        <tag>Introduction</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FYP Web App</title>
-    <url>/posts/672a/</url>
-    <content><![CDATA[<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h2><h3 id="1-1-The-Aim-of-The-WebApp"><a href="#1-1-The-Aim-of-The-WebApp" class="headerlink" title="1.1 The Aim of The WebApp"></a>1.1 The Aim of The WebApp</h3><p>　　As a supplement to FYP App, this webapp aims to use a more lightweight framework to achieve the goals of FYP, including wound contour recognition, wound area estimation, corresponding 3D printing material estimation, and corresponding wound characteristics analysis.Thanks to the framework named <a href="https://streamlit.io/">Streamlit</a>.</p>
-<h3 id="1-2-Brief-Introduction-of-the-Streamlit"><a href="#1-2-Brief-Introduction-of-the-Streamlit" class="headerlink" title="1.2 Brief Introduction of the Streamlit"></a>1.2 Brief Introduction of the Streamlit</h3><p>　　Streamlit turns data scripts into shareable web apps in minutes.Adding a widget is the same as declaring a variable. No need to write a backend, define routes, handle HTTP requests, connect a frontend, write HTML, CSS, JavaScript, …<br>　　And the installation is simple that you can use the code as follow to install the package:</p>
-<pre class="line-numbers language-python"><code class="language-python">     pip install streamlit <span class="token operator">-</span>i https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="2-Segmentation-Based-on-OpenCV"><a href="#2-Segmentation-Based-on-OpenCV" class="headerlink" title="2.Segmentation Based on OpenCV"></a>2.Segmentation Based on OpenCV</h2><p>　　At the beginning,dragging or uploading the wound image via local address or photo album.In order to analyze the wound image,the following steps are necessary,which is demonstrated as follow:</p>
-<ul>
-<li><strong>Step 1</strong> - Calibrate image. The calibration of the image can be realized by dragging the corners of the marker over two points of known distance in the horizontal axis and enter the distance.</li>
-<li><strong>Step 2</strong> - Adjust the bounding box to select the wound(<em>Region Of Interest</em>).</li>
-<li><strong>Step 3</strong> - Adjust the Threshold and Ratio sliders to get the ideal segmentation.</li>
-</ul>
-<h3 id="2-1-The-UI-Interface-of-OpenCV-Method"><a href="#2-1-The-UI-Interface-of-OpenCV-Method" class="headerlink" title="2.1 The UI Interface of OpenCV Method"></a>2.1 The UI Interface of OpenCV Method</h3><blockquote>
-<p>The UI interface must contain the image browser,slider,and the illustration of image.</p>
-</blockquote>
-<h4 id="2-1-1-The-Realization-of-Image-Uploader"><a href="#2-1-1-The-Realization-of-Image-Uploader" class="headerlink" title="2.1.1 The Realization of Image Uploader"></a>2.1.1 The Realization of Image Uploader</h4><p>The uploader component is simple to use </p>
-<pre class="line-numbers language-python"><code class="language-python">     streamlit<span class="token punctuation">.</span>file_uploader<span class="token punctuation">(</span>label<span class="token punctuation">,</span> type<span class="token operator">=</span>None<span class="token punctuation">,</span> accept_multiple_files<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> key<span class="token operator">=</span>None<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>Parameters</p>
-</blockquote>
-<ul>
-<li><strong>label (<em>str</em>)</strong> – A short label explaining to the user what this file uploader is for.</li>
-<li><strong>type (<em>str or list of str or None</em>)</strong> – Array of allowed extensions. <code>&quot;png&quot;</code>,<code>&quot;jpg&quot;</code>. The default is None, which means all extensions are allowed.</li>
-<li><strong>accept_multiple_files (bool)</strong> – If True, allows the user to upload multiple files at the same time, in which case the return value will be a list of files. Default: False</li>
-<li><strong>key (<em>str</em>)</strong> – An optional string to use as the unique key for the widget. If this is omitted, a key will be generated for the widget based on its content. Multiple widgets of the same type may not share the same key.</li>
-</ul>
-<h4 id="2-1-1-The-Realization-of-Threshold-Adjust"><a href="#2-1-1-The-Realization-of-Threshold-Adjust" class="headerlink" title="2.1.1 The Realization of Threshold Adjust"></a>2.1.1 The Realization of Threshold Adjust</h4><p>The ROI Selection and Threshold Adjusting is using streamlit-cropper and streamlit slider,the installation of the streamlit-cropper and the interpretation of the streamlit slider is demonstrated as follow:</p>
-<pre class="line-numbers language-python"><code class="language-python">     pip install streamlit<span class="token operator">-</span>cropper
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/posts/672a/streamlit_cropper_demo.gif" alt="Demo of Image Cropper"></p>
-<pre class="line-numbers language-python"><code class="language-python">streamlit<span class="token punctuation">.</span>slider<span class="token punctuation">(</span>label<span class="token punctuation">,</span> min_value<span class="token operator">=</span>None<span class="token punctuation">,</span> max_value<span class="token operator">=</span>None<span class="token punctuation">,</span> value<span class="token operator">=</span>None<span class="token punctuation">,</span> step<span class="token operator">=</span>None<span class="token punctuation">,</span> format<span class="token operator">=</span>None<span class="token punctuation">,</span> key<span class="token operator">=</span>None<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>The detailed usage please refer to the <a href="https://docs.streamlit.io/en/latest/api.html?highlight=slider#streamlit.slider">official documentation</a></p>
-<h3 id="2-2-The-Implementation-of-Wound-Segmentation"><a href="#2-2-The-Implementation-of-Wound-Segmentation" class="headerlink" title="2.2 The Implementation of Wound Segmentation"></a>2.2 The Implementation of Wound Segmentation</h3><p>The input image is processed based on GaussianBlur and Edge detection(<em>Canny Edge</em>)<br>Resize the input image into the shape of <code>(256,256)</code>,then turn the format of input image into RGB,Gray and LAB.<br>Set the threshold to the value which adjusted by the slider mentioned before,and then the result will be illustrated below the original image.</p>
-]]></content>
-      <categories>
-        <category>FYP Record</category>
-      </categories>
-      <tags>
-        <tag>FYP</tag>
-        <tag>WebApp</tag>
-        <tag>Streamlit</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FYP Application Introduction</title>
-    <url>/posts/2adb/</url>
-    <content><![CDATA[<h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>　　The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>　　Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by <a href="https://www.nus.edu.sg/">NUS</a>.</p>
-<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>　　This passage is written on the purpose of introducing the function of the FYP application.</p>
-<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
-<p>The App mainly includes four functions,which are :</p>
-</blockquote>
-<ul>
-<li><strong>CV</strong> - Using <strong>Traditional Computer Vision Method</strong> to analyze wound image,</li>
-<li><strong>DL</strong> - Using <strong>Deep Learning Method</strong> to segment the wound region from original image,</li>
-<li><strong>UI</strong> - Using <strong>Kivy Framework</strong> to design the UI interface.</li>
-<li><strong>More</strong> - And some other tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</li>
-</ul>
-<p>The following content will introduce the individual function of the main pages.</p>
-<h2 id="2-Login-Verification-Updated-at-2020-02-19"><a href="#2-Login-Verification-Updated-at-2020-02-19" class="headerlink" title="2. Login Verification: Updated at 2020/02/19"></a>2. Login Verification: Updated at 2020/02/19</h2><p><em>Version 0.1.0</em></p>
-<blockquote>
-<p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
-</blockquote>
-<p>　　The User are supposed to type the username and corresponding password to log in the app,the eyes on the right can be clicked to hide the password and the UI interface is illustrated as below:</p>
-<p><img src="/posts/2adb/login.png" alt="UI Interface for Login Page"></p>
-<h3 id="2-1-Login-Page"><a href="#2-1-Login-Page" class="headerlink" title="2.1 Login Page"></a>2.1 Login Page</h3><h4 id="Updated-at-2020-02-18"><a href="#Updated-at-2020-02-18" class="headerlink" title="Updated at 2020/02/18"></a>Updated at 2020/02/18</h4><ul>
-<li><p><strong>Integration &amp; Optimization of Functions such as Style Replacement</strong> - Add the original application style setting function to the setting page.</p>
-</li>
-<li><p><strong>Optimized Realization of Login Function</strong> - The original login interface has only been designed for the interface. This update adds the back-end database to realize the login function. At the same time, consider using third-party logins such as Github and Facebook to simplify the database structure and load. The existing interface is shown in the figure below. The user icon in the upper left corner can be used to create a new user and store it. At the same time, this page can jump to the password recovery interface to provide password recovery services for registered users.</p>
-</li>
-<li><p><strong>Add Verification or Error Prompt</strong> - Added prompts of incorrect types, including incorrect password, input user does not exist, etc. Set the login button to Progress Button to optimize the interface design and user experience.The detailed demo is showed as below:<br><img src="/posts/2adb/login_update.gif" alt="Verification or Error Prompt--Version 0.1.0"></p>
-</li>
-</ul>
-<h4 id="Updated-at-2020-02-25"><a href="#Updated-at-2020-02-25" class="headerlink" title="Updated at 2020/02/25"></a>Updated at 2020/02/25</h4><ul>
-<li><p><strong>Optimization of Textfield</strong> -Adjust the position of the icon on the right of the textfield, design a new FloatLayout to adjust the icon on the right to the textfield, beautify the design, and increase the user’s operability.<br><img src="/posts/2adb/login_update.png" alt="UI Interface for Login Page--Updated"></p>
-</li>
-<li><p><strong>Optimization of Page Layout</strong> -Move the password recovery page to the Toolbar to reduce the layout items of the login page. Its icon icon is shown in the figure below. Click to jump to the password recovery page.<br><img src="/posts/2adb/password_retrieve_icon.png" alt="Icon Button for Password Retrieve"></p>
-</li>
-<li><p><strong>Optimization of E-mail Typing</strong> -Add a list to visit the created users. Activate the form column at the bottom by clicking the button to the right of the first textfield. Further, the user can click the corresponding user name to automatically fill it in the first textfield, which simplifies the cumbersome login required Input content.<br><img src="/posts/2adb/user_list.gif" alt="Auto Fill the Textfield "></p>
-</li>
-<li><p><strong>Added Remember User Option</strong> -In order to reduce the tedious operation of entering a password every time a user logs in to the application, this update uses Checkbox to change the value of Remember (BOOLEAN) in the database, so that logged-in users can use this option to avoid repeated password input. On this basis, by double-clicking the text box in the password field, the corresponding user login password can be automatically filled in.The updated page is shown below:<br><img src="/posts/2adb/remember_checkbox.png" alt="Added Remember User Option"></p>
-</li>
-</ul>
-<h4 id="Updated-at-2020-03-02"><a href="#Updated-at-2020-03-02" class="headerlink" title="Updated at 2020/03/02"></a>Updated at 2020/03/02</h4><ul>
-<li><strong>Adding Login Via Github</strong> -Users can log in through their personal GitHub account, which reduces the time it takes for users to register a new account. If you successfully log in through your Github account, record the Github value (BOOLEAN) as True in the database. On this basis, the password reset option of the personal page is optimized: if you log in through Github, the password change function will be invalid, and the user needs to go to the official Github website to update or reset the password.<br><img src="/posts/2adb/github.png" alt="Login Via Github"></li>
-</ul>
-<h3 id="2-2-User-Register-Page"><a href="#2-2-User-Register-Page" class="headerlink" title="2.2 User Register Page"></a>2.2 User Register Page</h3><h4 id="Updated-at-2020-02-17"><a href="#Updated-at-2020-02-17" class="headerlink" title="Updated at 2020/02/17"></a>Updated at 2020/02/17</h4><p>　　The addition of the user registration function, this function can create new user personal information based on the user name and the email address that the user fills in. After the creation is completed, you can return to the login page to log in.And the UI interface is illustrated as the figure below:<br><img src="/posts/2adb/register.png" alt="UI Interface for Register Page"></p>
-<h3 id="2-3-Password-Retrieve-Page"><a href="#2-3-Password-Retrieve-Page" class="headerlink" title="2.3 Password Retrieve Page"></a>2.3 Password Retrieve Page</h3><h4 id="Updated-at-2020-02-18-1"><a href="#Updated-at-2020-02-18-1" class="headerlink" title="Updated at 2020/02/18"></a>Updated at 2020/02/18</h4><p>　　This function is designed to take into account the possibility of users forgetting their passwords, enter the email used during registration to retrieve and reset the password, and then log in. The design of its interface is shown in the figure below.<br><img src="/posts/2adb/retrieve.png" alt="UI Interface for Retrieve Page"></p>
-<h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
-<p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
-</blockquote>
-<p>　　The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.<br><img src="/posts/2adb/add.png" alt="UI Interface for Adding Patient Page"></p>
-<p>　　The required information are:Patient’s Name,Age,Gender,Creation Date.The creation date can be choosed by using datepicker,where you should <strong>double click</strong> the iconbutton.<br><img src="/posts/2adb/datepicker.gif" alt="Double Click To Activate DatePicker"></p>
-<p>　　Meanwhile,this page can be skipped directly and jump to <strong>Upload Page</strong> or <strong>Home</strong>.<br>　　At present stage,the data is collected in database,I am considering use <a href="https://console.firebase.google.com/">Firebase</a> to replace it in further work,as firebase can loose the burden on the local storage.</p>
-<h2 id="4-Home-Page"><a href="#4-Home-Page" class="headerlink" title="4. Home Page"></a>4. Home Page</h2><blockquote>
-<p>You can get to the home page if you have finished creating patient information.And the tabhint is used to guide the user for activating navigation drawer.Meanwhile,the chips on the bottom of the home shows the related knowledge and skills.</p>
-</blockquote>
-<p>　　The interface of the home page is showed as follow:<br><img src="/posts/2adb/home.png" alt="UI Interface for Home Page"><br>　　To jump to the corresponding tab, you can use the navigation drawer. In the figure below, the unique page implementation is shown.<br><img src="/posts/2adb/navigation.png" alt="Navigation Drawer"></p>
-<h4 id="Updated-at-2020-02-14"><a href="#Updated-at-2020-02-14" class="headerlink" title="Updated at 2020/02/14"></a>Updated at 2020/02/14</h4><p>　　The chips on the Home Page can be clicked and then you can view the relevant knowledge used in this App through the official website or Wikipedia,such as Python,Kivy,Json,etc.<br><img src="/posts/2adb/home_chips.png" alt="Chips on Home Page"></p>
-<p>　　The icon button on the right corner of the home page have the ability of activating the dialog with the QRcode,which you can scan to visit this personal blog.<br><img src="/posts/2adb/qrcode.png" alt="QRcode View"></p>
-<h2 id="5-Upload-Wound-Image-amp-Analyze"><a href="#5-Upload-Wound-Image-amp-Analyze" class="headerlink" title="5. Upload Wound Image &amp; Analyze"></a>5. Upload Wound Image &amp; Analyze</h2><blockquote>
-<p>This is one of the main tasks of the application,which contains the wound image upload.The core idea is to process and analyze images based on OpenCv through traditional computer vision methods, and then obtain the contour and specific characteristics of the wound.</p>
-</blockquote>
-<p>More specifically, it mainly includes three functions: <strong>taking pictures by camera</strong>, <strong>uploading local pictures /taking pictures &amp; wound pictures to the database</strong>, <strong>analyzing and processing wound pictures</strong>.</p>
-<h3 id="5-1-Camera"><a href="#5-1-Camera" class="headerlink" title="5.1 Camera"></a>5.1 Camera</h3><p>　　The camera function can be achieved by the camera on mobile phone,which can store the picture taken as the format <code>&quot;%Y%m%d%H%M%S.png&quot;</code>,at present the picture is stored in local address,I am considering using cloud-database as well.</p>
-<h3 id="5-2-Upload-Wound-Image"><a href="#5-2-Upload-Wound-Image" class="headerlink" title="5.2 Upload Wound Image"></a>5.2 Upload Wound Image</h3><p>　　Professional doctors will need to upload wound pictures to the database,thus this function aims to pop up a window to choose file from album in mobilephone.</p>
-<h4 id="Updated-at-2020-03-05"><a href="#Updated-at-2020-03-05" class="headerlink" title="Updated at 2020/03/05"></a>Updated at 2020/03/05</h4><p>　　The former format for the user uploaded image is <code>&quot;uploadimage/input.png&quot;</code> ,which is stored at the local address.After optimization,the <strong>COS</strong> is taken into practical account.The new format for the uploaded image is  showed in the code below:</p>
-<pre class="line-numbers language-python"><code class="language-python">    create <span class="token operator">=</span> App<span class="token punctuation">.</span>get_running_app<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>screen_manager<span class="token punctuation">.</span>get_screen<span class="token punctuation">(</span><span class="token string">'Create'</span><span class="token punctuation">)</span>
-    PatientName <span class="token operator">=</span> create<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>ids<span class="token punctuation">.</span>PatientName<span class="token punctuation">.</span>text<span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    upload_image_file_path <span class="token operator">=</span> <span class="token string">"uploadimage/&amp;#123;&amp;#125;_input.jpg"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>PatientName<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>　　Meanwhile,the code used for uploading image to the COS is also showed as below,the more detailed information can be found at Tencent Official Site of <a href="https://cloud.tencent.com/document/product/436/35151#.E7.AE.80.E4.BB.8B">COS</a>:</p>
-<pre class="line-numbers language-python"><code class="language-python">    response<span class="token operator">=</span>client<span class="token punctuation">.</span>upload_file<span class="token punctuation">(</span>
-        Bucket<span class="token operator">=</span><span class="token string">'wound-1301658428'</span><span class="token punctuation">,</span>
-        LocalFilePath<span class="token operator">=</span>upload_image_file_path<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># Path to local file</span>
-        Key<span class="token operator">=</span>upload_image_file_path<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># File name after uploading to the bucket</span>
-    <span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
-<blockquote>
-<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#x66;&#104;&#108;&#105;&#x65;&#108;&#x74;&#115;&#x38;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x66;&#104;&#108;&#105;&#x65;&#108;&#x74;&#115;&#x38;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;</a>).Please refer to the <a href="https://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
-　　</p>
-</blockquote>
-<p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>
-<h4 id="Updated-at-2020-02-15"><a href="#Updated-at-2020-02-15" class="headerlink" title="Updated at 2020/02/15"></a>Updated at 2020/02/15</h4><p>　　Optimize the file management pop-up window, beautify its appearance and increase its use functions, the nature of its asynchronous processing and wound image analysis has not changed.<br><img src="/posts/2adb/file_manager.png" alt="Optimized File Manager">    </p>
-<h4 id="Updated-at-2020-03-01"><a href="#Updated-at-2020-03-01" class="headerlink" title="Updated at 2020/03/01"></a>Updated at 2020/03/01</h4><p>　　Optimized the source of the patient’s name, age, gender, etc. for wound analysis details. Originally, it was set to determine the patient’s name to obtain the detailed information obtained from the analysis. Therefore, only one line of information for the same patient can be displayed. This information has been analyzed in the previous analysis. Stored in the patient information of the corresponding patient. Now it has been optimized by the following code. The realization idea is mainly based on the patient’s name as the identification, so as to retrieve the relevant information in the corresponding database and display it in the wound details page and the generated pdf file.</p>
-<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">Name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># sql = "SELECT PatientName FROM Patient WHERE PatientName='FanHaolin'"</span>
-        <span class="token comment" spellcheck="true"># The above is the former code,which is childish</span>
-        create <span class="token operator">=</span> App<span class="token punctuation">.</span>get_running_app<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>screen_manager<span class="token punctuation">.</span>get_screen<span class="token punctuation">(</span><span class="token string">'Create'</span><span class="token punctuation">)</span>
-        PatientName <span class="token operator">=</span> create<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>ids<span class="token punctuation">.</span>PatientName<span class="token punctuation">.</span>text<span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        sql <span class="token operator">=</span> <span class="token string">"SELECT PatientName FROM Patient WHERE PatientName='&amp;#123;&amp;#125;'"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>PatientName<span class="token punctuation">)</span>
-        res <span class="token operator">=</span> select_data<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>ids<span class="token punctuation">.</span>name<span class="token punctuation">.</span>text <span class="token operator">=</span> str<span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="6-Wound-Image-Segmentation–Deep-Learning"><a href="#6-Wound-Image-Segmentation–Deep-Learning" class="headerlink" title="6. Wound Image Segmentation–Deep Learning"></a>6. Wound Image Segmentation–Deep Learning</h2><h2 id="7-Patient-List"><a href="#7-Patient-List" class="headerlink" title="7. Patient List"></a>7. Patient List</h2><blockquote>
-<p> This page is an important part of the realization of electronic medical records</p>
-</blockquote>
-<p>The setting of this page is mainly to be able to access the patient’s medical records, which can be jumped by clicking the search button in the upper right corner of the Home Page, or by the History option in the Navigation Drawer. After jumping to this page, you can search for the patient’s name through the text box above to obtain detailed information about the patient. The page is displayed as follows:</p>
-<p><img src="/posts/2adb/patient_history.png" alt="Patient List"></p>
-<h4 id="Updated-at-2020-02-26"><a href="#Updated-at-2020-02-26" class="headerlink" title="Updated at 2020/02/26"></a>Updated at 2020/02/26</h4><ul>
-<li><strong>Search Funtion Optimization</strong> -This update adds a button click event corresponding to the patient’s name on the patient record page. Specifically, clicking the patient’s name can access its detailed medical history information. The analyzed medical history can be obtained through the <strong>Swipe Menu</strong> at the bottom of the sliding page. The next step is to add a new medical record modification function, which can be modified according to the doctor’s actual diagnosis. The current medical history interface is shown in the figure:</li>
-</ul>
-<p><img src="/posts/2adb/patient_history_updated.png" alt="Patient List &amp; Detailed Patient Information"></p>
-<ul>
-<li><strong>Some Details Modification</strong> - When click on the corresponding patient name within the patient list,the search textfield will change into the patient’s name,and you can use the icon-button on the right side of the textfield to delete the current content of the textfield.</li>
-</ul>
-<h2 id="8-Weather"><a href="#8-Weather" class="headerlink" title="8. Weather"></a>8. Weather</h2><blockquote>
-<p> The original intention of the weather module is to be used as a small life tool to provide doctors with timely weather information to deal with possible weather conditions.</p>
-</blockquote>
-<p>　　The temperature of the displayed area can be selected by yourself ,the default is (Singapore), and the automatic positioning function is to be developed.</p>
-<blockquote>
-<p>Note:The Weather funtion is supported by <a href="https://openweathermap.org/">OpenWeatherMap API</a></p>
-</blockquote>
-<p><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"><br>　　Meanwhile,the button on the toolbar have the ability to back to home or refresh the widget.</p>
-<h2 id="9-Personal-Setting"><a href="#9-Personal-Setting" class="headerlink" title="9. Personal Setting"></a>9. Personal Setting</h2><blockquote>
-<p>The personal setting page now contains name-chage-box,where the user can change the user name and avatar.Consider adding theme replacement function later.The the UI interface is illustrated as below:</p>
-</blockquote>
-<p><img src="/posts/2adb/setting.png" alt="UI Interface for Personal Setting Page"></p>
-<h3 id="9-1-Avatar-Change"><a href="#9-1-Avatar-Change" class="headerlink" title="9.1 Avatar Change"></a>9.1 Avatar Change</h3><h4 id="Updated-at-2020-02-21"><a href="#Updated-at-2020-02-21" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　The user can change the user avatar with clicking on the current avatar,which will activate the avatar list,the user can randomly choose one by clicking the image in the image list.</p>
-<p><img src="/posts/2adb/avatar_list.png" alt="Avatar List"> </p>
-<h3 id="9-2-Dark-Mode"><a href="#9-2-Dark-Mode" class="headerlink" title="9.2 Dark Mode"></a>9.2 Dark Mode</h3><h4 id="Updated-at-2020-02-21-1"><a href="#Updated-at-2020-02-21-1" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　The dark mode is set to meet the needs of users in different environments, and the mode can be switched through the switch.The schematic diagram of switching dark mode is shown below:<br><img src="/posts/2adb/theme-style.png" alt="Mode Change"> </p>
-<h3 id="9-3-Password-Visibility"><a href="#9-3-Password-Visibility" class="headerlink" title="9.3 Password Visibility"></a>9.3 Password Visibility</h3><h4 id="Updated-at-2020-02-21-2"><a href="#Updated-at-2020-02-21-2" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　This setting option can be used to set the visibility of the password, currently this setting is mainly for the login verification interface.</p>
-<h3 id="9-4-Password-Reset"><a href="#9-4-Password-Reset" class="headerlink" title="9.4 Password Reset"></a>9.4 Password Reset</h3><h4 id="Updated-at-2020-02-21-3"><a href="#Updated-at-2020-02-21-3" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　This function provides the option of password reset for users who have successfully logged in. When the old password is inconsistent with the original password, the new password is stored in the corresponding user information in the database. This function also considers using <strong>FireBase</strong> as storage in subsequent iterations database.For specific operations, please follow the pop-up prompts and confirm.<br><img src="/posts/2adb/password_reset.png" alt="Password Reset Dialog"></p>
-<h3 id="9-5-Logout-Current-Account"><a href="#9-5-Logout-Current-Account" class="headerlink" title="9.5 Logout Current Account"></a>9.5 Logout Current Account</h3><p>　　The logout function will log out of the current login account and jump to the login page. This function provides the application with the function of independent use of multiple accounts and stores user information separately.</p>
-<h2 id="10-Help-Page"><a href="#10-Help-Page" class="headerlink" title="10. Help Page"></a>10. Help Page</h2><p>　　The help page contains the chatbot,which has the ability to answer questions for the users.The chatbot can answer the questions like:</p>
-<ul>
-<li><strong>How are you</strong></li>
-<li><strong>How to upload</strong></li>
-<li><strong>How to use AI</strong></li>
-<li><strong>How to add</strong></li>
-<li><strong>What are you doing</strong><br>　　The figure below shows some example usages of help page:<br><img src="/posts/2adb/chatbot.png" alt="Sample Questions for Help Page"></li>
-</ul>
-<h2 id="11-Exit-App"><a href="#11-Exit-App" class="headerlink" title="11. Exit App"></a>11. Exit App</h2><p>　　To ensure the convenience of the user, the application has set up an exit button, and before the user confirms the exit, a pop-up prompt will be displayed to continue. For example, the following gif shows the specific operation process<br><img src="/posts/2adb/exit.gif" alt="Exit App Dialog"></p>
-]]></content>
-      <categories>
-        <category>FYP Record</category>
-      </categories>
-      <tags>
-        <tag>FYP</tag>
-        <tag>Kivy</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Deep Learning-Activation Function</title>
     <url>/posts/a2d2/</url>
     <content><![CDATA[<blockquote>
@@ -318,6 +87,53 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
       <tags>
         <tag>Python</tag>
         <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 中的 类和对象</title>
+    <url>/posts/bdb2/</url>
+    <content><![CDATA[<p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。</p>
+<a id="more"></a>
+<p>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
+<hr>
+<h2 id="面对对象编程——self"><a href="#面对对象编程——self" class="headerlink" title="面对对象编程——self"></a>面对对象编程——self</h2><blockquote>
+<p>如果将类比作图纸，那么由类实例化的对象才是真正可以住进去的房子。Python 中的self参数就是这样的道理，由同一个类可以生成无数对象，当第一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，那么python就知道需要操作哪个对象的方法了。</p>
+</blockquote>
+<p>通过一个简单的例子理解这一思想。</p>
+<h3 id="Code-block"><a href="#Code-block" class="headerlink" title="Code block"></a>Code block</h3><pre class="line-numbers language-python"><code class="language-python">@requires_authorization
+<span class="token keyword">class</span> <span class="token class-name">Study</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">setNmae</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token keyword">def</span> <span class="token function">study</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Who love studying?%s loves studying."</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> f <span class="token operator">=</span> Study<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>setNmae<span class="token punctuation">(</span>Fan Haolin<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>study<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Who love studying?Fan Haolin loves studying<span class="token punctuation">.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="Python-魔法方法——-“init-”"><a href="#Python-魔法方法——-“init-”" class="headerlink" title="Python 魔法方法—— “init()”"></a>Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
+<p>通常把此种方法称为构造方法，其魔法体现在只要实例化一个对象，这个方法就会在对象被创建时自动调用。其实，实例化对象是可以传入参数的，这些参数会自动传入<strong>init</strong>()中，可以通过重写这个方法以自定义对象的初始化操作。</p>
+</blockquote>
+<p>同样的一个简单的例子。</p>
+<h3 id="Code-block-1"><a href="#Code-block-1" class="headerlink" title="Code block"></a>Code block</h3><pre class="line-numbers language-python"><code class="language-python">@requires_authorization
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">Study</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">def</span> <span class="token function">study</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Who love studying?%s loves studying."</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> f <span class="token operator">=</span> Study<span class="token punctuation">(</span>Fan Haolin<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>study<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Who love studying?Fan Haolin loves studying<span class="token punctuation">.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python Study</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -459,6 +275,98 @@ pdf<span class="token punctuation">.</span>multiBuild<span class="token punctuat
       </tags>
   </entry>
   <entry>
+    <title>FYP Web App</title>
+    <url>/posts/672a/</url>
+    <content><![CDATA[<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h2><h3 id="1-1-The-Aim-of-The-WebApp"><a href="#1-1-The-Aim-of-The-WebApp" class="headerlink" title="1.1 The Aim of The WebApp"></a>1.1 The Aim of The WebApp</h3><p>　　As a supplement to FYP App, this webapp aims to use a more lightweight framework to achieve the goals of FYP, including wound contour recognition, wound area estimation, corresponding 3D printing material estimation, and corresponding wound characteristics analysis.Thanks to the framework named <a href="https://streamlit.io/">Streamlit</a>.</p>
+<h3 id="1-2-Brief-Introduction-of-the-Streamlit"><a href="#1-2-Brief-Introduction-of-the-Streamlit" class="headerlink" title="1.2 Brief Introduction of the Streamlit"></a>1.2 Brief Introduction of the Streamlit</h3><p>　　Streamlit turns data scripts into shareable web apps in minutes.Adding a widget is the same as declaring a variable. No need to write a backend, define routes, handle HTTP requests, connect a frontend, write HTML, CSS, JavaScript, …<br>　　And the installation is simple that you can use the code as follow to install the package:</p>
+<pre class="line-numbers language-python"><code class="language-python">     pip install streamlit <span class="token operator">-</span>i https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-Segmentation-Based-on-OpenCV"><a href="#2-Segmentation-Based-on-OpenCV" class="headerlink" title="2.Segmentation Based on OpenCV"></a>2.Segmentation Based on OpenCV</h2><p>　　At the beginning,dragging or uploading the wound image via local address or photo album.In order to analyze the wound image,the following steps are necessary,which is demonstrated as follow:</p>
+<ul>
+<li><strong>Step 1</strong> - Calibrate image. The calibration of the image can be realized by dragging the corners of the marker over two points of known distance in the horizontal axis and enter the distance.</li>
+<li><strong>Step 2</strong> - Adjust the bounding box to select the wound(<em>Region Of Interest</em>).</li>
+<li><strong>Step 3</strong> - Adjust the Threshold and Ratio sliders to get the ideal segmentation.</li>
+</ul>
+<h3 id="2-1-The-UI-Interface-of-OpenCV-Method"><a href="#2-1-The-UI-Interface-of-OpenCV-Method" class="headerlink" title="2.1 The UI Interface of OpenCV Method"></a>2.1 The UI Interface of OpenCV Method</h3><blockquote>
+<p>The UI interface must contain the image browser,slider,and the illustration of image.</p>
+</blockquote>
+<h4 id="2-1-1-The-Realization-of-Image-Uploader"><a href="#2-1-1-The-Realization-of-Image-Uploader" class="headerlink" title="2.1.1 The Realization of Image Uploader"></a>2.1.1 The Realization of Image Uploader</h4><p>The uploader component is simple to use </p>
+<pre class="line-numbers language-python"><code class="language-python">     streamlit<span class="token punctuation">.</span>file_uploader<span class="token punctuation">(</span>label<span class="token punctuation">,</span> type<span class="token operator">=</span>None<span class="token punctuation">,</span> accept_multiple_files<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> key<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>Parameters</p>
+</blockquote>
+<ul>
+<li><strong>label (<em>str</em>)</strong> – A short label explaining to the user what this file uploader is for.</li>
+<li><strong>type (<em>str or list of str or None</em>)</strong> – Array of allowed extensions. <code>&quot;png&quot;</code>,<code>&quot;jpg&quot;</code>. The default is None, which means all extensions are allowed.</li>
+<li><strong>accept_multiple_files (bool)</strong> – If True, allows the user to upload multiple files at the same time, in which case the return value will be a list of files. Default: False</li>
+<li><strong>key (<em>str</em>)</strong> – An optional string to use as the unique key for the widget. If this is omitted, a key will be generated for the widget based on its content. Multiple widgets of the same type may not share the same key.</li>
+</ul>
+<h4 id="2-1-1-The-Realization-of-Threshold-Adjust"><a href="#2-1-1-The-Realization-of-Threshold-Adjust" class="headerlink" title="2.1.1 The Realization of Threshold Adjust"></a>2.1.1 The Realization of Threshold Adjust</h4><p>The ROI Selection and Threshold Adjusting is using streamlit-cropper and streamlit slider,the installation of the streamlit-cropper and the interpretation of the streamlit slider is demonstrated as follow:</p>
+<pre class="line-numbers language-python"><code class="language-python">     pip install streamlit<span class="token operator">-</span>cropper
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/posts/672a/streamlit_cropper_demo.gif" alt="Demo of Image Cropper"></p>
+<pre class="line-numbers language-python"><code class="language-python">streamlit<span class="token punctuation">.</span>slider<span class="token punctuation">(</span>label<span class="token punctuation">,</span> min_value<span class="token operator">=</span>None<span class="token punctuation">,</span> max_value<span class="token operator">=</span>None<span class="token punctuation">,</span> value<span class="token operator">=</span>None<span class="token punctuation">,</span> step<span class="token operator">=</span>None<span class="token punctuation">,</span> format<span class="token operator">=</span>None<span class="token punctuation">,</span> key<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>The detailed usage please refer to the <a href="https://docs.streamlit.io/en/latest/api.html?highlight=slider#streamlit.slider">official documentation</a></p>
+<h3 id="2-2-The-Implementation-of-Wound-Segmentation"><a href="#2-2-The-Implementation-of-Wound-Segmentation" class="headerlink" title="2.2 The Implementation of Wound Segmentation"></a>2.2 The Implementation of Wound Segmentation</h3><p>The input image is processed based on GaussianBlur and Edge detection(<em>Canny Edge</em>)<br>Resize the input image into the shape of <code>(256,256)</code>,then turn the format of input image into RGB,Gray and LAB.<br>Set the threshold to the value which adjusted by the slider mentioned before,and then the result will be illustrated below the original image.</p>
+]]></content>
+      <categories>
+        <category>FYP Record</category>
+      </categories>
+      <tags>
+        <tag>FYP</tag>
+        <tag>WebApp</tag>
+        <tag>Streamlit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FanHaolin&#39;s Blog for FYP Study</title>
+    <url>/posts/4b7b/</url>
+    <content><![CDATA[<h1 id="Welcome-to-OliverFan’s-Blog"><a href="#Welcome-to-OliverFan’s-Blog" class="headerlink" title="Welcome to OliverFan’s Blog"></a>Welcome to OliverFan’s Blog</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>The aim of adding this blog is to demonstrate the learning process during the FYP,and also as a memo to record some important knowledge</p>
+</blockquote>
+<h3 id="Content-Introduction"><a href="#Content-Introduction" class="headerlink" title="Content Introduction"></a>Content Introduction</h3><table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="right">Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Python</td>
+<td align="right">Programming Skill</td>
+</tr>
+<tr>
+<td align="left">Kivy</td>
+<td align="right">UI Interface</td>
+</tr>
+<tr>
+<td align="left">Deep Learning</td>
+<td align="right">Wound Segmentation</td>
+</tr>
+</tbody></table>
+<h3 id="Current-Content"><a href="#Current-Content" class="headerlink" title="Current Content"></a>Current Content</h3><ul>
+<li><input checked disabled type="checkbox"> Fundamental Python</li>
+<li><input checked disabled type="checkbox"> Kivy Framework</li>
+<li><input disabled type="checkbox"> Deep Learning</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Currently it is only basical introduced. </p>
+</blockquote>
+<h2 id="Feedback-amp-Bug-Report"><a href="#Feedback-amp-Bug-Report" class="headerlink" title="Feedback &amp; Bug Report"></a>Feedback &amp; Bug Report</h2><p>You can leave a message via Github or Email</p>
+<ul>
+<li>Github: <a href="https://github.com/TOESL100">https://github.com/TOESL100</a></li>
+<li>Email: <a href="mailto:&#x66;&#104;&#108;&#105;&#x65;&#108;&#116;&#115;&#56;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x66;&#104;&#108;&#105;&#x65;&#108;&#116;&#115;&#56;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></li>
+</ul>
+<hr>
+<p>Thank you for reading this manual. Looking for your advice!</p>
+]]></content>
+      <tags>
+        <tag>Introduction</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Kivy Introduction and Trial</title>
     <url>/posts/81b9/</url>
     <content><![CDATA[<h2 id="Introducing-Kivy"><a href="#Introducing-Kivy" class="headerlink" title="Introducing Kivy"></a>Introducing Kivy</h2><blockquote>
@@ -510,50 +418,142 @@ TestApp<span class="token punctuation">(</span><span class="token punctuation">)
       </tags>
   </entry>
   <entry>
-    <title>Python 中的 类和对象</title>
-    <url>/posts/bdb2/</url>
-    <content><![CDATA[<p><strong>对象</strong> 是python 中不可回避的知识点，Python无处不对象。如果把一个人比作对象，人们通常从外观方面和行为方面进行描述，比如金发碧眼，长头发等，这些属于静态的外观特征，而游泳，唱歌等属于行为方面的动态对象 。</p>
-<a id="more"></a>
-<p>Python 中的<strong>对象</strong> 亦是如此，一个对象的特征称为<strong>“属性”</strong>，一个对象的行为称为<strong>“方法”</strong>。<br>总而言之，<strong>对象=属性+方法</strong></p>
-<hr>
-<h2 id="面对对象编程——self"><a href="#面对对象编程——self" class="headerlink" title="面对对象编程——self"></a>面对对象编程——self</h2><blockquote>
-<p>如果将类比作图纸，那么由类实例化的对象才是真正可以住进去的房子。Python 中的self参数就是这样的道理，由同一个类可以生成无数对象，当第一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，那么python就知道需要操作哪个对象的方法了。</p>
+    <title>FYP Application Introduction</title>
+    <url>/posts/2adb/</url>
+    <content><![CDATA[<h1 id="Acknowledgement"><a href="#Acknowledgement" class="headerlink" title="Acknowledgement"></a>Acknowledgement</h1><p>　　The FYP project is based on Professor Fuh Ying Hsi FYP project: <strong>Development of an AI-based region detection App. for wound healing therapy.</strong><br>　　Thanks Professor Fu and Professor Lu for their great help during the completion of the project.Thanks for the opportunity given by <a href="https://www.nus.edu.sg/">NUS</a>.</p>
+<h1 id="Record-For-Using-Wound-Analysis-App"><a href="#Record-For-Using-Wound-Analysis-App" class="headerlink" title="Record For Using Wound Analysis App"></a>Record For Using Wound Analysis App</h1><p>　　This passage is written on the purpose of introducing the function of the FYP application.</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><blockquote>
+<p>The App mainly includes four functions,which are :</p>
 </blockquote>
-<p>通过一个简单的例子理解这一思想。</p>
-<h3 id="Code-block"><a href="#Code-block" class="headerlink" title="Code block"></a>Code block</h3><pre class="line-numbers language-python"><code class="language-python">@requires_authorization
-<span class="token keyword">class</span> <span class="token class-name">Study</span><span class="token punctuation">:</span>
-<span class="token keyword">def</span> <span class="token function">setNmae</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
-<span class="token keyword">def</span> <span class="token function">study</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Who love studying?%s loves studying."</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-
-<span class="token operator">>></span><span class="token operator">></span> f <span class="token operator">=</span> Study<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>setNmae<span class="token punctuation">(</span>Fan Haolin<span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>study<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Who love studying?Fan Haolin loves studying<span class="token punctuation">.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="Python-魔法方法——-“init-”"><a href="#Python-魔法方法——-“init-”" class="headerlink" title="Python 魔法方法—— “init()”"></a>Python 魔法方法—— “<strong>init</strong>()”</h2><blockquote>
-<p>通常把此种方法称为构造方法，其魔法体现在只要实例化一个对象，这个方法就会在对象被创建时自动调用。其实，实例化对象是可以传入参数的，这些参数会自动传入<strong>init</strong>()中，可以通过重写这个方法以自定义对象的初始化操作。</p>
+<ul>
+<li><strong>CV</strong> - Using <strong>Traditional Computer Vision Method</strong> to analyze wound image,</li>
+<li><strong>DL</strong> - Using <strong>Deep Learning Method</strong> to segment the wound region from original image,</li>
+<li><strong>UI</strong> - Using <strong>Kivy Framework</strong> to design the UI interface.</li>
+<li><strong>More</strong> - And some other tools like PDF generation &amp; sending via E-mail,Weather and AI chatbot as customer service.</li>
+</ul>
+<p>The following content will introduce the individual function of the main pages.</p>
+<h2 id="2-Login-Verification-Updated-at-2020-02-19"><a href="#2-Login-Verification-Updated-at-2020-02-19" class="headerlink" title="2. Login Verification: Updated at 2020/02/19"></a>2. Login Verification: Updated at 2020/02/19</h2><p><em>Version 0.1.0</em></p>
+<blockquote>
+<p>The current login page is just an empty shell with no specific functions,while the aim is using Google authorization to achive the function of signing up and signing in.</p>
 </blockquote>
-<p>同样的一个简单的例子。</p>
-<h3 id="Code-block-1"><a href="#Code-block-1" class="headerlink" title="Code block"></a>Code block</h3><pre class="line-numbers language-python"><code class="language-python">@requires_authorization
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">Study</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
-    <span class="token keyword">def</span> <span class="token function">study</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Who love studying?%s loves studying."</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-
-<span class="token operator">>></span><span class="token operator">></span> f <span class="token operator">=</span> Study<span class="token punctuation">(</span>Fan Haolin<span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">.</span>study<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Who love studying?Fan Haolin loves studying<span class="token punctuation">.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　The User are supposed to type the username and corresponding password to log in the app,the eyes on the right can be clicked to hide the password and the UI interface is illustrated as below:</p>
+<p><img src="/posts/2adb/login.png" alt="UI Interface for Login Page"></p>
+<h3 id="2-1-Login-Page"><a href="#2-1-Login-Page" class="headerlink" title="2.1 Login Page"></a>2.1 Login Page</h3><h4 id="Updated-at-2020-02-18"><a href="#Updated-at-2020-02-18" class="headerlink" title="Updated at 2020/02/18"></a>Updated at 2020/02/18</h4><ul>
+<li><p><strong>Integration &amp; Optimization of Functions such as Style Replacement</strong> - Add the original application style setting function to the setting page.</p>
+</li>
+<li><p><strong>Optimized Realization of Login Function</strong> - The original login interface has only been designed for the interface. This update adds the back-end database to realize the login function. At the same time, consider using third-party logins such as Github and Facebook to simplify the database structure and load. The existing interface is shown in the figure below. The user icon in the upper left corner can be used to create a new user and store it. At the same time, this page can jump to the password recovery interface to provide password recovery services for registered users.</p>
+</li>
+<li><p><strong>Add Verification or Error Prompt</strong> - Added prompts of incorrect types, including incorrect password, input user does not exist, etc. Set the login button to Progress Button to optimize the interface design and user experience.The detailed demo is showed as below:<br><img src="/posts/2adb/login_update.gif" alt="Verification or Error Prompt--Version 0.1.0"></p>
+</li>
+</ul>
+<h4 id="Updated-at-2020-02-25"><a href="#Updated-at-2020-02-25" class="headerlink" title="Updated at 2020/02/25"></a>Updated at 2020/02/25</h4><ul>
+<li><p><strong>Optimization of Textfield</strong> -Adjust the position of the icon on the right of the textfield, design a new FloatLayout to adjust the icon on the right to the textfield, beautify the design, and increase the user’s operability.<br><img src="/posts/2adb/login_update.png" alt="UI Interface for Login Page--Updated"></p>
+</li>
+<li><p><strong>Optimization of Page Layout</strong> -Move the password recovery page to the Toolbar to reduce the layout items of the login page. Its icon icon is shown in the figure below. Click to jump to the password recovery page.<br><img src="/posts/2adb/password_retrieve_icon.png" alt="Icon Button for Password Retrieve"></p>
+</li>
+<li><p><strong>Optimization of E-mail Typing</strong> -Add a list to visit the created users. Activate the form column at the bottom by clicking the button to the right of the first textfield. Further, the user can click the corresponding user name to automatically fill it in the first textfield, which simplifies the cumbersome login required Input content.<br><img src="/posts/2adb/user_list.gif" alt="Auto Fill the Textfield "></p>
+</li>
+<li><p><strong>Added Remember User Option</strong> -In order to reduce the tedious operation of entering a password every time a user logs in to the application, this update uses Checkbox to change the value of Remember (BOOLEAN) in the database, so that logged-in users can use this option to avoid repeated password input. On this basis, by double-clicking the text box in the password field, the corresponding user login password can be automatically filled in.The updated page is shown below:<br><img src="/posts/2adb/remember_checkbox.png" alt="Added Remember User Option"></p>
+</li>
+</ul>
+<h4 id="Updated-at-2020-03-02"><a href="#Updated-at-2020-03-02" class="headerlink" title="Updated at 2020/03/02"></a>Updated at 2020/03/02</h4><ul>
+<li><strong>Adding Login Via Github</strong> -Users can log in through their personal GitHub account, which reduces the time it takes for users to register a new account. If you successfully log in through your Github account, record the Github value (BOOLEAN) as True in the database. On this basis, the password reset option of the personal page is optimized: if you log in through Github, the password change function will be invalid, and the user needs to go to the official Github website to update or reset the password.<br><img src="/posts/2adb/github.png" alt="Login Via Github"></li>
+</ul>
+<h3 id="2-2-User-Register-Page"><a href="#2-2-User-Register-Page" class="headerlink" title="2.2 User Register Page"></a>2.2 User Register Page</h3><h4 id="Updated-at-2020-02-17"><a href="#Updated-at-2020-02-17" class="headerlink" title="Updated at 2020/02/17"></a>Updated at 2020/02/17</h4><p>　　The addition of the user registration function, this function can create new user personal information based on the user name and the email address that the user fills in. After the creation is completed, you can return to the login page to log in.And the UI interface is illustrated as the figure below:<br><img src="/posts/2adb/register.png" alt="UI Interface for Register Page"></p>
+<h3 id="2-3-Password-Retrieve-Page"><a href="#2-3-Password-Retrieve-Page" class="headerlink" title="2.3 Password Retrieve Page"></a>2.3 Password Retrieve Page</h3><h4 id="Updated-at-2020-02-18-1"><a href="#Updated-at-2020-02-18-1" class="headerlink" title="Updated at 2020/02/18"></a>Updated at 2020/02/18</h4><p>　　This function is designed to take into account the possibility of users forgetting their passwords, enter the email used during registration to retrieve and reset the password, and then log in. The design of its interface is shown in the figure below.<br><img src="/posts/2adb/retrieve.png" alt="UI Interface for Retrieve Page"></p>
+<h2 id="3-Adding-Patient-Information"><a href="#3-Adding-Patient-Information" class="headerlink" title="3. Adding Patient Information"></a>3. Adding Patient Information</h2><blockquote>
+<p>The App is designed with the ability to store patients information via sqlite which is the Python’s built-in database.</p>
+</blockquote>
+<p>　　The user can click the <strong>Adding</strong> button on the navigation drawer to jump to the specified page,which is demonstrated as the figure below.<br><img src="/posts/2adb/add.png" alt="UI Interface for Adding Patient Page"></p>
+<p>　　The required information are:Patient’s Name,Age,Gender,Creation Date.The creation date can be choosed by using datepicker,where you should <strong>double click</strong> the iconbutton.<br><img src="/posts/2adb/datepicker.gif" alt="Double Click To Activate DatePicker"></p>
+<p>　　Meanwhile,this page can be skipped directly and jump to <strong>Upload Page</strong> or <strong>Home</strong>.<br>　　At present stage,the data is collected in database,I am considering use <a href="https://console.firebase.google.com/">Firebase</a> to replace it in further work,as firebase can loose the burden on the local storage.</p>
+<h2 id="4-Home-Page"><a href="#4-Home-Page" class="headerlink" title="4. Home Page"></a>4. Home Page</h2><blockquote>
+<p>You can get to the home page if you have finished creating patient information.And the tabhint is used to guide the user for activating navigation drawer.Meanwhile,the chips on the bottom of the home shows the related knowledge and skills.</p>
+</blockquote>
+<p>　　The interface of the home page is showed as follow:<br><img src="/posts/2adb/home.png" alt="UI Interface for Home Page"><br>　　To jump to the corresponding tab, you can use the navigation drawer. In the figure below, the unique page implementation is shown.<br><img src="/posts/2adb/navigation.png" alt="Navigation Drawer"></p>
+<h4 id="Updated-at-2020-02-14"><a href="#Updated-at-2020-02-14" class="headerlink" title="Updated at 2020/02/14"></a>Updated at 2020/02/14</h4><p>　　The chips on the Home Page can be clicked and then you can view the relevant knowledge used in this App through the official website or Wikipedia,such as Python,Kivy,Json,etc.<br><img src="/posts/2adb/home_chips.png" alt="Chips on Home Page"></p>
+<p>　　The icon button on the right corner of the home page have the ability of activating the dialog with the QRcode,which you can scan to visit this personal blog.<br><img src="/posts/2adb/qrcode.png" alt="QRcode View"></p>
+<h2 id="5-Upload-Wound-Image-amp-Analyze"><a href="#5-Upload-Wound-Image-amp-Analyze" class="headerlink" title="5. Upload Wound Image &amp; Analyze"></a>5. Upload Wound Image &amp; Analyze</h2><blockquote>
+<p>This is one of the main tasks of the application,which contains the wound image upload.The core idea is to process and analyze images based on OpenCv through traditional computer vision methods, and then obtain the contour and specific characteristics of the wound.</p>
+</blockquote>
+<p>More specifically, it mainly includes three functions: <strong>taking pictures by camera</strong>, <strong>uploading local pictures /taking pictures &amp; wound pictures to the database</strong>, <strong>analyzing and processing wound pictures</strong>.</p>
+<h3 id="5-1-Camera"><a href="#5-1-Camera" class="headerlink" title="5.1 Camera"></a>5.1 Camera</h3><p>　　The camera function can be achieved by the camera on mobile phone,which can store the picture taken as the format <code>&quot;%Y%m%d%H%M%S.png&quot;</code>,at present the picture is stored in local address,I am considering using cloud-database as well.</p>
+<h3 id="5-2-Upload-Wound-Image"><a href="#5-2-Upload-Wound-Image" class="headerlink" title="5.2 Upload Wound Image"></a>5.2 Upload Wound Image</h3><p>　　Professional doctors will need to upload wound pictures to the database,thus this function aims to pop up a window to choose file from album in mobilephone.</p>
+<h4 id="Updated-at-2020-03-05"><a href="#Updated-at-2020-03-05" class="headerlink" title="Updated at 2020/03/05"></a>Updated at 2020/03/05</h4><p>　　The former format for the user uploaded image is <code>&quot;uploadimage/input.png&quot;</code> ,which is stored at the local address.After optimization,the <strong>COS</strong> is taken into practical account.The new format for the uploaded image is  showed in the code below:</p>
+<pre class="line-numbers language-python"><code class="language-python">    create <span class="token operator">=</span> App<span class="token punctuation">.</span>get_running_app<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>screen_manager<span class="token punctuation">.</span>get_screen<span class="token punctuation">(</span><span class="token string">'Create'</span><span class="token punctuation">)</span>
+    PatientName <span class="token operator">=</span> create<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>ids<span class="token punctuation">.</span>PatientName<span class="token punctuation">.</span>text<span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    upload_image_file_path <span class="token operator">=</span> <span class="token string">"uploadimage/&amp;#123;&amp;#125;_input.jpg"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>PatientName<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>　　Meanwhile,the code used for uploading image to the COS is also showed as below,the more detailed information can be found at Tencent Official Site of <a href="https://cloud.tencent.com/document/product/436/35151#.E7.AE.80.E4.BB.8B">COS</a>:</p>
+<pre class="line-numbers language-python"><code class="language-python">    response<span class="token operator">=</span>client<span class="token punctuation">.</span>upload_file<span class="token punctuation">(</span>
+        Bucket<span class="token operator">=</span><span class="token string">'wound-1301658428'</span><span class="token punctuation">,</span>
+        LocalFilePath<span class="token operator">=</span>upload_image_file_path<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># Path to local file</span>
+        Key<span class="token operator">=</span>upload_image_file_path<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># File name after uploading to the bucket</span>
+    <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-3-Analyze-Wound-Image"><a href="#5-3-Analyze-Wound-Image" class="headerlink" title="5.3 Analyze Wound Image"></a>5.3 Analyze Wound Image</h3><p>　　This module is implemented as the main function of the application, which can realize the identification of the <em>wound contour</em> and the analysis of the corresponding <em>wound characteristics</em>.<br>　　After uploading the picture, the back-end will recognize it, and display the uploaded original picture and the processed picture on the page. On this basis, The corresponding report can be generated and sent to the mailbox.An example usage is demonstrated as follow:<br><img src="/posts/2adb/analyze.gif" alt="Application Example of Image Analysis"></p>
+<blockquote>
+<p>Note:If the user click the E-mail Button,the application will send an e-mail with an attachment containing <strong>Wound Analysis Report</strong> to designated mailbox(for example:<a href="mailto:&#102;&#x68;&#x6c;&#105;&#x65;&#x6c;&#116;&#115;&#x38;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#102;&#x68;&#x6c;&#105;&#x65;&#x6c;&#116;&#115;&#x38;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a>).Please refer to the <a href="https://oliverfan.top/posts/40f8/">PDF Generator</a> for detailed completion steps and source code.
+　　</p>
+</blockquote>
+<p>　　A demo of the attachment is demonstrated as the figure below:<br><img src="/posts/2adb/wound_report.png" alt="Wound Analysis Report"></p>
+<h4 id="Updated-at-2020-02-15"><a href="#Updated-at-2020-02-15" class="headerlink" title="Updated at 2020/02/15"></a>Updated at 2020/02/15</h4><p>　　Optimize the file management pop-up window, beautify its appearance and increase its use functions, the nature of its asynchronous processing and wound image analysis has not changed.<br><img src="/posts/2adb/file_manager.png" alt="Optimized File Manager">    </p>
+<h4 id="Updated-at-2020-03-01"><a href="#Updated-at-2020-03-01" class="headerlink" title="Updated at 2020/03/01"></a>Updated at 2020/03/01</h4><p>　　Optimized the source of the patient’s name, age, gender, etc. for wound analysis details. Originally, it was set to determine the patient’s name to obtain the detailed information obtained from the analysis. Therefore, only one line of information for the same patient can be displayed. This information has been analyzed in the previous analysis. Stored in the patient information of the corresponding patient. Now it has been optimized by the following code. The realization idea is mainly based on the patient’s name as the identification, so as to retrieve the relevant information in the corresponding database and display it in the wound details page and the generated pdf file.</p>
+<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">Name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># sql = "SELECT PatientName FROM Patient WHERE PatientName='FanHaolin'"</span>
+        <span class="token comment" spellcheck="true"># The above is the former code,which is childish</span>
+        create <span class="token operator">=</span> App<span class="token punctuation">.</span>get_running_app<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>screen_manager<span class="token punctuation">.</span>get_screen<span class="token punctuation">(</span><span class="token string">'Create'</span><span class="token punctuation">)</span>
+        PatientName <span class="token operator">=</span> create<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>ids<span class="token punctuation">.</span>PatientName<span class="token punctuation">.</span>text<span class="token punctuation">.</span>lstrip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        sql <span class="token operator">=</span> <span class="token string">"SELECT PatientName FROM Patient WHERE PatientName='&amp;#123;&amp;#125;'"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>PatientName<span class="token punctuation">)</span>
+        res <span class="token operator">=</span> select_data<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>ids<span class="token punctuation">.</span>name<span class="token punctuation">.</span>text <span class="token operator">=</span> str<span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-Wound-Image-Segmentation–Deep-Learning"><a href="#6-Wound-Image-Segmentation–Deep-Learning" class="headerlink" title="6. Wound Image Segmentation–Deep Learning"></a>6. Wound Image Segmentation–Deep Learning</h2><h2 id="7-Patient-List"><a href="#7-Patient-List" class="headerlink" title="7. Patient List"></a>7. Patient List</h2><blockquote>
+<p> This page is an important part of the realization of electronic medical records</p>
+</blockquote>
+<p>The setting of this page is mainly to be able to access the patient’s medical records, which can be jumped by clicking the search button in the upper right corner of the Home Page, or by the History option in the Navigation Drawer. After jumping to this page, you can search for the patient’s name through the text box above to obtain detailed information about the patient. The page is displayed as follows:</p>
+<p><img src="/posts/2adb/patient_history.png" alt="Patient List"></p>
+<h4 id="Updated-at-2020-02-26"><a href="#Updated-at-2020-02-26" class="headerlink" title="Updated at 2020/02/26"></a>Updated at 2020/02/26</h4><ul>
+<li><strong>Search Funtion Optimization</strong> -This update adds a button click event corresponding to the patient’s name on the patient record page. Specifically, clicking the patient’s name can access its detailed medical history information. The analyzed medical history can be obtained through the <strong>Swipe Menu</strong> at the bottom of the sliding page. The next step is to add a new medical record modification function, which can be modified according to the doctor’s actual diagnosis. The current medical history interface is shown in the figure:</li>
+</ul>
+<p><img src="/posts/2adb/patient_history_updated.png" alt="Patient List &amp; Detailed Patient Information"></p>
+<ul>
+<li><strong>Some Details Modification</strong> - When click on the corresponding patient name within the patient list,the search textfield will change into the patient’s name,and you can use the icon-button on the right side of the textfield to delete the current content of the textfield.</li>
+</ul>
+<h2 id="8-Weather"><a href="#8-Weather" class="headerlink" title="8. Weather"></a>8. Weather</h2><blockquote>
+<p> The original intention of the weather module is to be used as a small life tool to provide doctors with timely weather information to deal with possible weather conditions.</p>
+</blockquote>
+<p>　　The temperature of the displayed area can be selected by yourself ,the default is (Singapore), and the automatic positioning function is to be developed.</p>
+<blockquote>
+<p>Note:The Weather funtion is supported by <a href="https://openweathermap.org/">OpenWeatherMap API</a></p>
+</blockquote>
+<p><img src="/posts/2adb/weather.gif" alt="Weather In Singapore"><br>　　Meanwhile,the button on the toolbar have the ability to back to home or refresh the widget.</p>
+<h2 id="9-Personal-Setting"><a href="#9-Personal-Setting" class="headerlink" title="9. Personal Setting"></a>9. Personal Setting</h2><blockquote>
+<p>The personal setting page now contains name-chage-box,where the user can change the user name and avatar.Consider adding theme replacement function later.The the UI interface is illustrated as below:</p>
+</blockquote>
+<p><img src="/posts/2adb/setting.png" alt="UI Interface for Personal Setting Page"></p>
+<h3 id="9-1-Avatar-Change"><a href="#9-1-Avatar-Change" class="headerlink" title="9.1 Avatar Change"></a>9.1 Avatar Change</h3><h4 id="Updated-at-2020-02-21"><a href="#Updated-at-2020-02-21" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　The user can change the user avatar with clicking on the current avatar,which will activate the avatar list,the user can randomly choose one by clicking the image in the image list.</p>
+<p><img src="/posts/2adb/avatar_list.png" alt="Avatar List"> </p>
+<h3 id="9-2-Dark-Mode"><a href="#9-2-Dark-Mode" class="headerlink" title="9.2 Dark Mode"></a>9.2 Dark Mode</h3><h4 id="Updated-at-2020-02-21-1"><a href="#Updated-at-2020-02-21-1" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　The dark mode is set to meet the needs of users in different environments, and the mode can be switched through the switch.The schematic diagram of switching dark mode is shown below:<br><img src="/posts/2adb/theme-style.png" alt="Mode Change"> </p>
+<h3 id="9-3-Password-Visibility"><a href="#9-3-Password-Visibility" class="headerlink" title="9.3 Password Visibility"></a>9.3 Password Visibility</h3><h4 id="Updated-at-2020-02-21-2"><a href="#Updated-at-2020-02-21-2" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　This setting option can be used to set the visibility of the password, currently this setting is mainly for the login verification interface.</p>
+<h3 id="9-4-Password-Reset"><a href="#9-4-Password-Reset" class="headerlink" title="9.4 Password Reset"></a>9.4 Password Reset</h3><h4 id="Updated-at-2020-02-21-3"><a href="#Updated-at-2020-02-21-3" class="headerlink" title="Updated at 2020/02/21"></a>Updated at 2020/02/21</h4><p>　　This function provides the option of password reset for users who have successfully logged in. When the old password is inconsistent with the original password, the new password is stored in the corresponding user information in the database. This function also considers using <strong>FireBase</strong> as storage in subsequent iterations database.For specific operations, please follow the pop-up prompts and confirm.<br><img src="/posts/2adb/password_reset.png" alt="Password Reset Dialog"></p>
+<h3 id="9-5-Logout-Current-Account"><a href="#9-5-Logout-Current-Account" class="headerlink" title="9.5 Logout Current Account"></a>9.5 Logout Current Account</h3><p>　　The logout function will log out of the current login account and jump to the login page. This function provides the application with the function of independent use of multiple accounts and stores user information separately.</p>
+<h2 id="10-Help-Page"><a href="#10-Help-Page" class="headerlink" title="10. Help Page"></a>10. Help Page</h2><p>　　The help page contains the chatbot,which has the ability to answer questions for the users.The chatbot can answer the questions like:</p>
+<ul>
+<li><strong>How are you</strong></li>
+<li><strong>How to upload</strong></li>
+<li><strong>How to use AI</strong></li>
+<li><strong>How to add</strong></li>
+<li><strong>What are you doing</strong><br>　　The figure below shows some example usages of help page:<br><img src="/posts/2adb/chatbot.png" alt="Sample Questions for Help Page"></li>
+</ul>
+<h2 id="11-Exit-App"><a href="#11-Exit-App" class="headerlink" title="11. Exit App"></a>11. Exit App</h2><p>　　To ensure the convenience of the user, the application has set up an exit button, and before the user confirms the exit, a pop-up prompt will be displayed to continue. For example, the following gif shows the specific operation process<br><img src="/posts/2adb/exit.gif" alt="Exit App Dialog"></p>
 ]]></content>
       <categories>
-        <category>Python Study</category>
+        <category>FYP Record</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>FYP</tag>
+        <tag>Kivy</tag>
       </tags>
   </entry>
 </search>

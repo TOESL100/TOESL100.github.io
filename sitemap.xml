@@ -109,13 +109,6 @@
   </url>
   
   <url>
-    <loc>http://oliverfan.top/tags/Tools/</loc>
-    <lastmod>2021-05-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://oliverfan.top/tags/FYP/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
@@ -138,6 +131,13 @@
   
   <url>
     <loc>http://oliverfan.top/tags/Introduction/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oliverfan.top/tags/Tools/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
